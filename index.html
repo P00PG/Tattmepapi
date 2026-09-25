@@ -11,7 +11,7 @@
     content="TAT TME PAPI — Tattoo studio. Discover body art as a form of personal expression."
   />
 
-  <!-- Fonts: heading/bodyyy -->
+  <!-- Fonts: heading/body -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
@@ -153,9 +153,14 @@
 <script>
   const nzNotice = document.getElementById("nzNotice");
   const navigation = performance.getEntriesByType("navigation")[0];
+  const hasVisitedHome = sessionStorage.getItem("nzNoticeSeen");
 
-  if (nzNotice && navigation?.type === "reload") {
-    nzNotice.showModal();
+  if (nzNotice) {
+    if (!hasVisitedHome || navigation?.type === "reload") {
+      nzNotice.showModal();
+    }
+
+    sessionStorage.setItem("nzNoticeSeen", "true");
   }
 </script>
 </body>
