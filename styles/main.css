@@ -1,0 +1,2406 @@
+:root {
+  --page-bg: #fff;
+  --black: #000;
+  --dark-grey: #5a5a5a;
+  --nav-grey: #565656;
+  --canvas-width: 1920px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  min-width: 320px;
+  min-height: 100%;
+  margin: 0;
+}
+
+body {
+  overflow-x: hidden;
+  background: var(--page-bg);
+  color: var(--black);
+  font-family: "DM Sans", Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* HOME PAGE */
+
+.home-page {
+  width: 100%;
+  min-height: 100vh;
+}
+
+.home-layout {
+  display: grid;
+  grid-template-columns: 925fr 700fr;
+  column-gap: 130px;
+  width: min(100%, var(--canvas-width));
+  min-height: 100vh;
+  margin: 0 auto;
+  padding:
+    clamp(42px, 5.8vh, 63px)
+    clamp(40px, 5.7vw, 110px)
+    clamp(48px, 6.5vh, 70px);
+}
+
+.home-content {
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  align-items: start;
+  min-width: 0;
+  padding: 78px 0 52px;
+  text-align: center;
+}
+
+.brand-name,
+.home-nav,
+.home-nav a {
+  font-family: "Anton", Impact, sans-serif;
+  font-weight: 400;
+  text-transform: uppercase;
+}
+
+.brand-name {
+  justify-self: center;
+  margin: 0;
+  color: var(--dark-grey);
+  font-size: clamp(2rem, 2.65vw, 3rem);
+  letter-spacing: 0.005em;
+  line-height: 1;
+}
+
+.home-copy {
+  align-self: center;
+  justify-self: center;
+  width: 100%;
+  margin-top: 48px;
+  transform: translateY(-4px);
+}
+
+.home-copy h1 {
+  margin: 0;
+  color: var(--black);
+  font-family: "Anton", Impact, sans-serif;
+  font-size: clamp(4.1rem, 5.55vw, 6.85rem);
+  font-weight: 400;
+  letter-spacing: 0.003em;
+  line-height: 0.88;
+}
+
+.intro-text {
+  max-width: 780px;
+  margin: 48px auto 0;
+  color: var(--black);
+  font-size: clamp(1.2rem, 1.48vw, 1.8rem);
+  letter-spacing: -0.025em;
+  line-height: 1.36;
+}
+
+.social-links {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 22px;
+  margin-top: 62px;
+}
+
+.social-links a {
+  display: inline-grid;
+  width: 40px;
+  height: 40px;
+  flex: 0 0 40px;
+  place-items: center;
+  color: var(--black);
+  text-decoration: none;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.social-links a:hover {
+  opacity: 0.62;
+  transform: translateY(-3px);
+}
+
+.social-links svg,
+.social-links img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.social-links svg {
+  fill: none;
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 1.55;
+}
+
+.social-links a:last-child svg {
+  fill: currentColor;
+  stroke: none;
+}
+
+.home-nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(44px, 5.5vw, 108px);
+  width: 100%;
+  padding-top: 20px;
+}
+
+.home-nav a {
+  position: relative;
+  color: var(--nav-grey);
+  font-size: clamp(1.32rem, 1.77vw, 2.15rem);
+  letter-spacing: 0.01em;
+  line-height: 1;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.home-nav a:hover,
+.home-nav a.active {
+  color: var(--black);
+}
+
+.home-nav a::after {
+  position: absolute;
+  right: 0;
+  bottom: -11px;
+  left: 0;
+  height: 3px;
+  background: currentColor;
+  content: "";
+  opacity: 0;
+  transform: scaleX(0);
+}
+
+.home-nav a.active::after {
+  opacity: 1;
+  transform: scaleX(1);
+}
+
+.video-card {
+  align-self: center;
+  width: 100%;
+  height: min(78.7vh, 850px);
+  min-height: 650px;
+  overflow: hidden;
+  border-radius: 27px;
+  background: #d7d7d7;
+  box-shadow: 0 5px 0 rgba(0, 0, 0, 0.1);
+}
+
+.tattoo-video {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  filter: grayscale(1) contrast(0.98) brightness(1.08);
+}
+
+/* ABOUT PAGE */
+
+.about-page {
+  background: #fff;
+}
+
+.about-hero {
+  min-height: 100vh;
+  padding: 84px 0 105px;
+}
+
+.about-container {
+  width: min(100% - 184px, 1735px);
+  margin: 0 auto;
+}
+
+.about-top-row {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 60px;
+}
+
+.about-top-row h1,
+.about-nav a,
+.portfolio-tab {
+  font-family: "Anton", Impact, sans-serif;
+  font-weight: 400;
+  text-transform: uppercase;
+}
+
+.about-top-row h1 {
+  margin: 0;
+  font-size: clamp(4rem, 5.15vw, 6.2rem);
+  letter-spacing: 0.03em;
+  line-height: 0.92;
+}
+
+.about-nav {
+  display: flex;
+  align-items: center;
+  gap: clamp(31px, 3.15vw, 60px);
+  padding-top: 5px;
+}
+
+.about-nav a {
+  position: relative;
+  color: #575757;
+  font-size: clamp(1.24rem, 1.53vw, 1.83rem);
+  letter-spacing: 0.01em;
+  line-height: 1;
+  text-decoration: none;
+}
+
+.about-nav a:hover,
+.about-nav a.active {
+  color: #000;
+}
+
+.about-nav a.active::after {
+  position: absolute;
+  right: 0;
+  bottom: -10px;
+  left: 0;
+  height: 3px;
+  background: currentColor;
+  content: "";
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 808px) minmax(0, 808px);
+  justify-content: space-between;
+  gap: clamp(50px, 4.7vw, 90px);
+  margin-top: clamp(80px, 8.2vh, 89px);
+}
+
+.about-image-wrap {
+  width: 100%;
+  aspect-ratio: 1 / 0.875;
+  overflow: hidden;
+  border-radius: 31px;
+  background: #dedede;
+}
+
+.about-image-wrap img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.about-text-card {
+  display: flex;
+  min-height: 100%;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 60px 69px 47px;
+  border: 3px solid #000000;
+  border-radius: 31px;
+  background: #fff;
+}
+
+.about-text-content h2 {
+  margin: 0;
+  color: #5a5a5a;
+  font-size: clamp(1.6rem, 2.03vw, 2.45rem);
+  font-weight: 700;
+  letter-spacing: -0.035em;
+  line-height: 1.2;
+}
+
+.about-text-content h3 {
+  margin: clamp(72px, 8.2vh, 89px) 0 19px;
+  color: #5a5a5a;
+  font-size: clamp(1.3rem, 1.48vw, 1.78rem);
+  font-weight: 700;
+  letter-spacing: -0.035em;
+  line-height: 1.2;
+}
+
+.about-text-content p {
+  max-width: 620px;
+  margin: 0;
+  color: #080808;
+  font-size: clamp(1.2rem, 1.54vw, 1.86rem);
+  letter-spacing: -0.035em;
+  line-height: 1.3;
+}
+
+.about-social-links {
+  display: flex;
+  align-items: center;
+  align-self: flex-end;
+  gap: 24px;
+  margin-top: 38px;
+}
+
+.about-social-links a {
+  display: inline-grid;
+  width: clamp(31px, 2.25vw, 43px);
+  height: clamp(31px, 2.25vw, 43px);
+  flex: 0 0 auto;
+  place-items: center;
+  color: #000;
+  text-decoration: none;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.about-social-links a:hover {
+  opacity: 0.64;
+  transform: translateY(-3px);
+}
+
+.about-social-links svg,
+.about-social-links img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.about-social-links svg {
+  fill: none;
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 1.8;
+}
+
+.about-social-links .telegram-icon {
+  fill: currentColor;
+  stroke: none;
+}
+
+/* PORTFOLIO */
+
+.portfolio-section {
+  min-height: 100vh;
+  padding: 78px 0 150px;
+  background: #fff;
+}
+
+.portfolio-container {
+  width: min(100% - 245px, 1368px);
+  margin: 0 auto;
+}
+
+.portfolio-tabs {
+  display: flex;
+  align-items: center;
+  gap: clamp(54px, 6.5vw, 125px);
+  margin-bottom: clamp(94px, 10.4vh, 112px);
+}
+
+.portfolio-tab {
+  position: relative;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: #5a5a5a;
+  cursor: pointer;
+  font-size: clamp(1.45rem, 1.85vw, 2.2rem);
+  letter-spacing: 0.01em;
+  line-height: 1;
+}
+
+.portfolio-tab:hover,
+.portfolio-tab.active {
+  color: #000;
+}
+
+.portfolio-tab.active::after {
+  position: absolute;
+  right: 0;
+  bottom: -11px;
+  left: 0;
+  height: 3px;
+  background: currentColor;
+  content: "";
+}
+
+.portfolio-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  column-gap: clamp(34px, 4.1vw, 79px);
+  row-gap: clamp(56px, 6.8vh, 73px);
+  width: 100%;
+}
+
+.portfolio-card {
+  aspect-ratio: 1 / 1.03;
+  overflow: hidden;
+  border-radius: 31px;
+  background: #e7e7e7;
+}
+
+.portfolio-card.is-hidden {
+  display: none;
+}
+
+.portfolio-open {
+  display: block;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  cursor: zoom-in;
+}
+
+.portfolio-open img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.35s ease;
+}
+
+.portfolio-open:hover img {
+  transform: scale(1.045);
+}
+
+.portfolio-open:focus-visible {
+  outline: 3px solid #000000;
+  outline-offset: -3px;
+}
+
+.portfolio-empty-message {
+  margin: 70px 0 0;
+  color: #5a5a5a;
+  font-size: 1.2rem;
+  text-align: center;
+}
+
+/* CLEAN, SMALLER POP-UP */
+
+.portfolio-lightbox {
+  position: fixed;
+  width: fit-content;
+  max-width: min(760px, calc(100vw - 48px));
+  max-height: calc(100vh - 80px);
+  margin: auto;
+  padding: 0;
+  border: 0;
+  border-radius: 16px;
+  background: transparent;
+  overflow: visible;
+  box-shadow: 0 20px 70px rgba(0, 0, 0, 0.45);
+}
+
+.portfolio-lightbox:not([open]) {
+  display: none;
+}
+
+.portfolio-lightbox::backdrop {
+  background: rgba(0, 0, 0, 0.82);
+  backdrop-filter: blur(3px);
+}
+
+.portfolio-lightbox > img {
+  display: block;
+  width: auto;
+  max-width: min(760px, calc(100vw - 48px));
+  height: auto;
+  max-height: calc(100vh - 80px);
+  border-radius: 16px;
+  object-fit: contain;
+}
+
+.portfolio-lightbox-close {
+  position: absolute;
+  z-index: 1;
+  top: 12px;
+  right: 12px;
+  display: grid;
+  width: 42px;
+  height: 42px;
+  place-items: center;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.78);
+  color: #fff;
+  cursor: pointer;
+  font: 32px/1 Arial, sans-serif;
+}
+
+.portfolio-lightbox-close:hover {
+  background: #000;
+}
+
+.portfolio-lightbox-close:focus-visible {
+  outline: 3px solid #fff;
+  outline-offset: 3px;
+}
+
+body.lightbox-open {
+  overflow: hidden;
+}
+
+
+
+/* =========================================================
+   AFTERCARE PAGE
+   ========================================================= */
+
+.aftercare-page {
+  min-height: 100vh;
+  background: #ffffff;
+  color: #000000;
+}
+
+.aftercare-hero {
+  min-height: 100vh;
+  padding: 62px 0 110px;
+}
+
+.aftercare-page-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 60px;
+  width: min(100% - 62px, 1725px);
+  margin: 0 auto;
+}
+
+.aftercare-page-header h1,
+.aftercare-nav a {
+  font-family: "Anton", Impact, sans-serif;
+  font-weight: 400;
+  text-transform: uppercase;
+}
+
+.aftercare-page-header h1 {
+  margin: 0;
+  color: #000;
+  font-size: clamp(4.1rem, 5.2vw, 6.3rem);
+  letter-spacing: 0.02em;
+  line-height: 0.9;
+}
+
+.aftercare-nav {
+  display: flex;
+  align-items: center;
+  gap: clamp(31px, 3.15vw, 60px);
+  padding-top: 5px;
+}
+
+.aftercare-nav a {
+  position: relative;
+  color: #575757;
+  font-size: clamp(1.24rem, 1.53vw, 1.83rem);
+  letter-spacing: 0.01em;
+  line-height: 1;
+  text-decoration: none;
+}
+
+.aftercare-nav a:hover,
+.aftercare-nav a.active {
+  color: #000;
+}
+
+.aftercare-nav a.active::after {
+  position: absolute;
+  right: 0;
+  bottom: -10px;
+  left: 0;
+  height: 3px;
+  background: currentColor;
+  content: "";
+}
+
+/* Same centred width from your Canva reference */
+.aftercare-container {
+  width: min(100% - 540px, 1220px);
+  margin: clamp(110px, 11.7vh, 126px) auto 0;
+}
+
+.aftercare-item {
+  border-top: 3px solid #111111;
+}
+
+.aftercare-item:last-child {
+  border-bottom: 3px solid #111111;
+}
+
+.aftercare-item summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 30px;
+  min-height: 152px;
+  padding: 28px 23px;
+  color: #000;
+  cursor: pointer;
+  font-family: "DM Sans", Arial, sans-serif;
+  font-size: clamp(2rem, 2.5vw, 3rem);
+  font-weight: 700;
+  letter-spacing: -0.04em;
+  list-style: none;
+}
+
+.aftercare-item summary::-webkit-details-marker {
+  display: none;
+}
+
+/* Custom + symbol */
+.accordion-icon {
+  position: relative;
+  display: block;
+  width: 50px;
+  height: 50px;
+  flex: 0 0 50px;
+}
+
+.accordion-icon::before,
+.accordion-icon::after {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 46px;
+  height: 2px;
+  background: #111;
+  content: "";
+  transform: translate(-50%, -50%);
+}
+
+.accordion-icon::after {
+  transform: translate(-50%, -50%) rotate(90deg);
+  transition: transform 0.2s ease;
+}
+
+/* Open section uses − rather than + */
+.aftercare-item[open] .accordion-icon::after {
+  transform: translate(-50%, -50%) rotate(0deg);
+}
+
+.aftercare-item[open] summary {
+  min-height: 144px;
+}
+
+.aftercare-content {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 2px 75px 96px;
+  text-align: center;
+}
+
+.aftercare-content p {
+  margin: 0 auto 28px;
+  color: #090909;
+  font-family: "DM Sans", Arial, sans-serif;
+  font-size: clamp(1.14rem, 1.45vw, 1.73rem);
+  font-weight: 400;
+  letter-spacing: -0.035em;
+  line-height: 1.12;
+}
+
+.aftercare-content p:last-child {
+  margin-bottom: 0;
+}
+
+.aftercare-content strong {
+  font-weight: 700;
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 3px;
+}
+
+.aftercare-content .aftercare-important {
+  max-width: 720px;
+  color: #000;
+  font-weight: 700;
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 4px;
+}
+
+/* Aftercare responsive */
+@media (max-width: 1450px) {
+  .aftercare-container {
+    width: min(100% - 180px, 1050px);
+  }
+}
+
+@media (max-width: 1000px) {
+  .aftercare-hero {
+    min-height: auto;
+    padding: 48px 0 80px;
+  }
+
+  .aftercare-page-header {
+    flex-direction: column;
+    gap: 28px;
+    width: min(100% - 48px, 720px);
+  }
+
+  .aftercare-nav {
+    flex-wrap: wrap;
+    gap: 20px 30px;
+    padding: 0;
+  }
+
+  .aftercare-nav a {
+    font-size: 1.1rem;
+  }
+
+  .aftercare-container {
+    width: min(100% - 48px, 720px);
+    margin-top: 68px;
+  }
+
+  .aftercare-item summary {
+    min-height: 112px;
+    padding: 24px 15px;
+    font-size: 2rem;
+  }
+
+  .aftercare-content {
+    padding: 0 40px 64px;
+  }
+}
+
+@media (max-width: 560px) {
+  .aftercare-page-header,
+  .aftercare-container {
+    width: min(100% - 36px, 500px);
+  }
+
+  .aftercare-page-header h1 {
+    font-size: 3.6rem;
+  }
+
+  .aftercare-nav {
+    gap: 15px 21px;
+  }
+
+  .aftercare-nav a {
+    font-size: 0.96rem;
+  }
+
+  .aftercare-nav a.active::after {
+    bottom: -7px;
+    height: 2px;
+  }
+
+  .aftercare-container {
+    margin-top: 46px;
+  }
+
+  .aftercare-item {
+    border-top-width: 2px;
+  }
+
+  .aftercare-item:last-child {
+    border-bottom-width: 2px;
+  }
+
+  .aftercare-item summary {
+    min-height: 88px;
+    padding: 18px 10px;
+    font-size: 1.45rem;
+  }
+
+  .accordion-icon {
+    width: 31px;
+    height: 31px;
+    flex-basis: 31px;
+  }
+
+  .accordion-icon::before,
+  .accordion-icon::after {
+    width: 28px;
+    height: 2px;
+  }
+
+  .aftercare-content {
+    padding: 3px 10px 43px;
+  }
+
+  .aftercare-content p {
+    margin-bottom: 20px;
+    font-size: 1rem;
+    line-height: 1.35;
+  }
+}
+
+
+/* =========================================================
+   BOOKING PAGE
+   ========================================================= */
+
+.booking-page {
+  background: #fff;
+  color: #000;
+  overflow: hidden;
+}
+
+.booking-page-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 60px;
+  width: min(100% - 92px, 1710px);
+  margin: 0 auto;
+  padding-top: 62px;
+}
+
+.booking-page-header h1,
+.booking-nav a,
+.booking-step-number,
+.booking-contact-copy h2 {
+  font-family: "Anton", Impact, sans-serif;
+  font-weight: 400;
+  text-transform: uppercase;
+}
+
+.booking-page-header h1 {
+  margin: 0;
+  font-size: clamp(4rem, 5.25vw, 6.35rem);
+  letter-spacing: 0.02em;
+  line-height: 0.9;
+}
+
+.booking-nav {
+  display: flex;
+  align-items: center;
+  gap: clamp(31px, 3.15vw, 60px);
+  padding-top: 7px;
+}
+
+.booking-nav a {
+  position: relative;
+  color: #575757;
+  font-size: clamp(1.24rem, 1.53vw, 1.83rem);
+  letter-spacing: 0.01em;
+  line-height: 1;
+  text-decoration: none;
+}
+
+.booking-nav a:hover,
+.booking-nav a.active {
+  color: #000;
+}
+
+.booking-nav a.active::after {
+  position: absolute;
+  right: 0;
+  bottom: -10px;
+  left: 0;
+  height: 3px;
+  background: currentColor;
+  content: "";
+}
+
+/* Hero */
+.booking-hero-section {
+  min-height: 100vh;
+  padding-bottom: 90px;
+}
+
+.booking-hero-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 940px) minmax(360px, 620px);
+  align-items: center;
+  justify-content: space-between;
+  gap: clamp(60px, 6vw, 115px);
+  width: min(100% - 92px, 1710px);
+  margin: clamp(95px, 10vh, 108px) auto 0;
+}
+
+.booking-intro-card {
+  min-height: 515px;
+  padding: 48px 38px 58px;
+  border: 3px solid #000000;
+  border-radius: 31px;
+}
+
+.booking-intro-card h2 {
+  margin: 0 0 43px;
+  color: #5c5c5c;
+  font-size: clamp(2.15rem, 3.05vw, 3.7rem);
+  font-weight: 700;
+  letter-spacing: -0.04em;
+  line-height: 1.1;
+}
+
+.booking-intro-card p {
+  max-width: 825px;
+  margin: 0;
+  font-size: clamp(1.35rem, 2vw, 2.5rem);
+  letter-spacing: -0.035em;
+  line-height: 1.24;
+}
+
+.booking-button-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 36px;
+  margin-top: 46px;
+}
+
+.booking-contact-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 320px;
+  min-height: 81px;
+  padding: 16px 34px;
+  border-radius: 999px;
+  color: #fff;
+  font-size: clamp(1.35rem, 2vw, 2.35rem);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  text-decoration: none;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.booking-contact-button:hover {
+  opacity: 0.88;
+  transform: translateY(-3px);
+}
+
+.whatsapp-button {
+  background: #28513f;
+}
+
+.telegram-button {
+  background: #2d6170;
+}
+
+.booking-hero-image {
+  height: min(69vh, 707px);
+  min-height: 500px;
+  overflow: hidden;
+  border-radius: 31px;
+  background: #e6e6e6;
+}
+
+.booking-hero-image img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Shared two-column process layouts */
+.booking-process-section,
+.booking-pricing-section,
+.booking-deposit-section,
+.booking-policy-section,
+.booking-consent-section,
+.booking-payment-section {
+  padding: 100px 0;
+}
+
+.booking-process-layout,
+.booking-pricing-layout,
+.booking-deposit-layout,
+.booking-policy-layout,
+.booking-consent-layout,
+.booking-payment-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 620px) minmax(0, 930px);
+  align-items: center;
+  justify-content: space-between;
+  gap: clamp(70px, 10vw, 210px);
+  width: min(100% - 150px, 1690px);
+  margin: 0 auto;
+}
+
+.booking-step-intro h2 {
+  margin: 0 0 115px;
+  font-size: clamp(3.7rem, 5.4vw, 6.5rem);
+  font-weight: 700;
+  letter-spacing: -0.05em;
+  line-height: 0.92;
+}
+
+.booking-step-number {
+  display: block;
+  margin-bottom: 52px;
+  font-size: clamp(4rem, 5.25vw, 6.35rem);
+  line-height: 0.8;
+}
+
+.booking-step-intro h3 {
+  margin: 0 0 39px;
+  font-size: clamp(1.9rem, 2.65vw, 3.2rem);
+  font-weight: 700;
+  letter-spacing: -0.04em;
+  line-height: 1.05;
+}
+
+.booking-step-intro > p {
+  max-width: 610px;
+  margin: 0;
+  font-size: clamp(1.25rem, 1.8vw, 2.15rem);
+  letter-spacing: -0.035em;
+  line-height: 1.32;
+}
+
+/* Booking template */
+.booking-template-card {
+  overflow: hidden;
+  border: 3px solid #000000;
+  border-radius: 31px;
+}
+
+.booking-template-card h3 {
+  margin: 0;
+  padding: 33px 30px 27px;
+  border-bottom: 3px solid #111;
+  font-size: clamp(1.8rem, 2.4vw, 3rem);
+  font-weight: 700;
+  letter-spacing: -0.035em;
+  text-align: center;
+}
+
+.booking-template-content {
+  padding: 48px 75px 55px;
+}
+
+.booking-template-content p {
+  display: grid;
+  gap: 0;
+  margin: 0 0 28px;
+  font-size: clamp(1.2rem, 1.65vw, 2rem);
+  letter-spacing: -0.035em;
+  line-height: 1.14;
+}
+
+.booking-template-content p:last-child {
+  margin-bottom: 0;
+}
+
+.booking-template-content em {
+  font-size: 0.73em;
+  font-weight: 400;
+}
+
+/* Pricing cards */
+.booking-pricing-layout {
+  grid-template-columns: minmax(0, 830px) minmax(0, 625px);
+  align-items: center;
+}
+
+.pricing-card-stack,
+.deposit-card-stack,
+.consent-card-stack {
+  display: grid;
+  gap: 26px;
+}
+
+.rate-card {
+  min-height: 210px;
+  padding: 50px;
+  border-radius: 31px;
+}
+
+.rate-card h3 {
+  margin: 0 0 18px;
+  font-size: clamp(1.7rem, 2.45vw, 2.95rem);
+  font-weight: 700;
+  letter-spacing: -0.04em;
+  line-height: 1.05;
+}
+
+.rate-card p {
+  margin: 0;
+  font-size: clamp(1.35rem, 2vw, 2.4rem);
+  letter-spacing: -0.035em;
+  line-height: 1.27;
+}
+
+.rate-card-dark {
+  background: #606060;
+  color: #fff;
+}
+
+.rate-card-light {
+  border: 3px solid #111;
+  background: #fff;
+  color: #000;
+  text-align: center;
+}
+
+.pricing-intro {
+  align-self: center;
+}
+
+/* Deposit */
+.booking-deposit-layout {
+  grid-template-columns: minmax(0, 580px) minmax(0, 765px);
+  align-items: start;
+}
+
+.deposit-card-stack .rate-card {
+  min-height: 206px;
+  padding: 42px 45px;
+}
+
+.deposit-note,
+.medical-note {
+  display: flex;
+  align-items: flex-end;
+  gap: 25px;
+  margin-top: 180px;
+}
+
+.note-icon {
+  display: inline-grid;
+  width: 58px;
+  height: 58px;
+  flex: 0 0 58px;
+  place-items: center;
+  border: 4px solid #000;
+  border-radius: 50%;
+  font-size: 2.8rem;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.deposit-note p,
+.medical-note p {
+  margin: 0;
+  font-size: clamp(0.83rem, 1vw, 1.2rem);
+  font-style: italic;
+  letter-spacing: -0.025em;
+  line-height: 1.35;
+}
+
+/* Accordion shared styles */
+.booking-policy-layout,
+.booking-payment-layout {
+  grid-template-columns: minmax(0, 930px) minmax(0, 600px);
+  align-items: start;
+}
+
+.booking-accordion-item {
+  border-top: 3px solid #111;
+}
+
+.booking-accordion-item:last-child {
+  border-bottom: 3px solid #111;
+}
+
+.booking-accordion-item summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 30px;
+  min-height: 137px;
+  padding: 24px 23px;
+  cursor: pointer;
+  font-size: clamp(1.6rem, 2.45vw, 2.95rem);
+  font-weight: 700;
+  letter-spacing: -0.04em;
+  line-height: 1.1;
+  list-style: none;
+}
+
+.booking-accordion-item summary::-webkit-details-marker {
+  display: none;
+}
+
+.booking-accordion-icon {
+  position: relative;
+  display: block;
+  width: 50px;
+  height: 50px;
+  flex: 0 0 50px;
+}
+
+.booking-accordion-icon::before,
+.booking-accordion-icon::after {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 46px;
+  height: 2px;
+  background: #111;
+  content: "";
+  transform: translate(-50%, -50%);
+}
+
+.booking-accordion-icon::after {
+  transform: translate(-50%, -50%) rotate(90deg);
+  transition: transform 0.2s ease;
+}
+
+.booking-accordion-item[open] .booking-accordion-icon::after {
+  transform: translate(-50%, -50%) rotate(0deg);
+}
+
+.booking-accordion-content {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 24px 45px 100px;
+  text-align: center;
+}
+
+.booking-accordion-content p {
+  margin: 0 0 24px;
+  font-size: clamp(1.15rem, 1.62vw, 1.95rem);
+  letter-spacing: -0.035em;
+  line-height: 1.2;
+}
+
+.booking-accordion-content p:last-child {
+  margin-bottom: 0;
+}
+
+.booking-accordion-content strong {
+  font-weight: 700;
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 3px;
+}
+
+/* Consent */
+.booking-consent-layout {
+  grid-template-columns: minmax(0, 570px) minmax(0, 1070px);
+  align-items: center;
+}
+
+.consent-card {
+  padding: 34px 31px;
+  border-radius: 31px;
+}
+
+.consent-card h3 {
+  margin: 0 0 36px;
+  font-size: clamp(1.65rem, 2.4vw, 2.9rem);
+  font-weight: 700;
+  letter-spacing: -0.04em;
+}
+
+.consent-card p {
+  margin: 0 0 30px;
+  font-size: clamp(1.05rem, 1.55vw, 1.85rem);
+  letter-spacing: -0.035em;
+  line-height: 1.28;
+}
+
+.consent-card p:last-child {
+  margin-bottom: 0;
+}
+
+.consent-card-dark {
+  background: #606060;
+  color: #fff;
+}
+
+.consent-card-light {
+  border: 3px solid #111;
+  background: #fff;
+}
+
+/* Payment */
+.payment-content,
+.grabpay-content {
+  padding: 24px 54px 80px;
+}
+
+.paynow-content {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  gap: 42px;
+}
+
+.paynow-content > p {
+  max-width: 400px;
+  margin: 0;
+  font-size: clamp(1.2rem, 1.75vw, 2.1rem);
+  letter-spacing: -0.035em;
+  line-height: 1.33;
+}
+
+.paynow-qr-wrap {
+  display: grid;
+  justify-items: center;
+  gap: 12px;
+}
+
+.paynow-qr-wrap img {
+  width: 235px;
+  height: 235px;
+  object-fit: contain;
+}
+
+.paynow-qr-wrap span {
+  padding: 8px 24px;
+  border: 3px solid #111;
+  border-radius: 999px;
+  font-size: 1.3rem;
+  font-weight: 700;
+}
+
+.grabpay-intro-text {
+  max-width: 750px;
+  margin: 0 0 50px;
+  font-size: clamp(1.2rem, 1.7vw, 2.05rem);
+  letter-spacing: -0.035em;
+  line-height: 1.3;
+}
+
+.grabpay-warning-text {
+  max-width: 890px;
+  margin: 0 0 44px;
+  font-size: clamp(0.95rem, 1.25vw, 1.5rem);
+  font-style: italic;
+  letter-spacing: -0.025em;
+  line-height: 1.38;
+}
+
+.grabpay-options {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 28px;
+}
+
+.grabpay-option {
+  overflow: hidden;
+  border: 3px solid #111;
+  border-radius: 28px;
+}
+
+.grabpay-option > h3,
+.grabpay-option > h4,
+.grabpay-option > p {
+  margin-right: 36px;
+  margin-left: 36px;
+}
+
+.grabpay-option > h3 {
+  margin-top: 31px;
+  margin-bottom: 34px;
+  font-size: 2.2rem;
+}
+
+.grabpay-option > h4 {
+  margin-bottom: 39px;
+  font-size: 1.6rem;
+  font-style: italic;
+  font-weight: 500;
+  line-height: 1.2;
+}
+
+.grabpay-option > p {
+  margin-bottom: 35px;
+  font-size: 1.35rem;
+  letter-spacing: -0.03em;
+  line-height: 1.33;
+}
+
+.grabpay-example {
+  border-top: 3px solid #111;
+}
+
+.grabpay-example > p {
+  margin: 0;
+  padding: 26px 28px;
+  border-bottom: 2px solid #999;
+  font-size: 1.25rem;
+  text-align: center;
+}
+
+.grabpay-example > div {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+  align-items: center;
+  min-height: 100px;
+  padding: 16px 24px;
+  border-bottom: 2px solid #999;
+  font-size: 1.1rem;
+  text-align: center;
+}
+
+.grabpay-example > div:last-child {
+  border-bottom: 0;
+}
+
+.grabpay-example strong {
+  font-size: 1.25rem;
+}
+
+/* Final contact */
+.booking-contact-section {
+  min-height: 100vh;
+  padding: 150px 0 90px;
+}
+
+.booking-contact-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 950px) minmax(420px, 555px);
+  align-items: center;
+  justify-content: space-between;
+  gap: 90px;
+  width: min(100% - 180px, 1620px);
+  margin: 0 auto;
+}
+
+.booking-contact-copy {
+  text-align: center;
+}
+
+.booking-contact-copy h2 {
+  margin: 0 0 64px;
+  font-size: clamp(4rem, 6.4vw, 7.7rem);
+  letter-spacing: -0.015em;
+  line-height: 1.05;
+}
+
+.booking-contact-copy p {
+  max-width: 930px;
+  margin: 0 auto;
+  font-size: clamp(1.55rem, 2.5vw, 3rem);
+  letter-spacing: -0.04em;
+  line-height: 1.24;
+}
+
+.booking-contact-actions {
+  display: grid;
+  justify-items: stretch;
+  gap: 42px;
+}
+
+.booking-contact-actions .booking-contact-button {
+  width: 100%;
+  min-width: 0;
+  min-height: 118px;
+  font-size: clamp(2rem, 3vw, 3.6rem);
+}
+
+.booking-social-links {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 22px;
+  margin-top: 120px;
+}
+
+.booking-social-links a {
+  display: inline-grid;
+  width: 42px;
+  height: 42px;
+  place-items: center;
+  color: #000;
+  text-decoration: none;
+}
+
+.booking-social-links svg,
+.booking-social-links img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.booking-social-links svg {
+  fill: none;
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 1.8;
+}
+
+.booking-social-links .telegram-icon {
+  fill: currentColor;
+  stroke: none;
+}
+
+/* =========================================================
+   Smaller desktop scale — About, Aftercare, Booking only
+   Home page is not affected
+   ========================================================= */
+
+@media (min-width: 1001px) {
+  /* Page titles and navigation */
+  .about-top-row h1,
+  .aftercare-page-header h1,
+  .booking-page-header h1 {
+    font-size: clamp(3.5rem, 4vw, 4.8rem);
+  }
+
+  .about-nav a,
+  .aftercare-nav a,
+  .booking-nav a {
+    font-size: clamp(1rem, 1.15vw, 1.35rem);
+  }
+
+  /* ABOUT */
+  .about-hero {
+    min-height: auto;
+    padding: 60px 0 90px;
+  }
+
+  .about-container {
+    width: min(calc(100% - 100px), 1400px);
+  }
+
+  .about-grid {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    gap: 55px;
+    margin-top: 70px;
+  }
+
+  .about-image-wrap,
+  .about-text-card {
+    border-radius: 24px;
+  }
+
+  .about-text-card {
+    padding: 38px;
+  }
+
+  .about-text-content h2 {
+    font-size: clamp(1.35rem, 1.6vw, 1.9rem);
+  }
+
+  .about-text-content h3 {
+    margin-top: 48px;
+    font-size: clamp(1.1rem, 1.3vw, 1.5rem);
+  }
+
+  .about-text-content p {
+    font-size: clamp(1rem, 1.17vw, 1.35rem);
+    line-height: 1.4;
+  }
+
+  .about-social-links a {
+    width: 34px;
+    height: 34px;
+  }
+
+  .portfolio-section {
+    min-height: auto;
+    padding: 65px 0 100px;
+  }
+
+  .portfolio-container {
+    width: min(100% - 120px, 1150px);
+  }
+
+  .portfolio-tabs {
+    gap: 65px;
+    margin-bottom: 65px;
+  }
+
+  .portfolio-tab {
+    font-size: clamp(1.15rem, 1.35vw, 1.55rem);
+  }
+
+  .portfolio-grid {
+    width: 100%;
+    max-width: none;
+    column-gap: 45px;
+    row-gap: 55px;
+  }
+
+  .portfolio-card {
+    border-radius: 22px;
+  }
+
+  /* AFTERCARE */
+  .aftercare-hero {
+    min-height: auto;
+    padding: 55px 0 90px;
+  }
+
+  .aftercare-container {
+    width: min(100% - 180px, 1000px);
+    margin-top: 90px;
+  }
+
+  .aftercare-item summary,
+  .aftercare-item[open] summary {
+    min-height: 105px;
+    padding: 20px;
+    font-size: clamp(1.5rem, 1.85vw, 2rem);
+  }
+
+  .aftercare-content {
+    padding: 5px 55px 65px;
+  }
+
+  .aftercare-content p {
+    margin-bottom: 20px;
+    font-size: clamp(1rem, 1.15vw, 1.3rem);
+    line-height: 1.45;
+  }
+
+  /* BOOKING — overall widths and section spacing */
+  .booking-hero-layout {
+    width: min(100% - 100px, 1400px);
+  }
+
+  .booking-process-layout,
+  .booking-pricing-layout,
+  .booking-deposit-layout,
+  .booking-policy-layout,
+  .booking-consent-layout,
+  .booking-payment-layout {
+    width: min(100% - 120px, 1360px);
+    gap: 75px;
+  }
+
+  .booking-hero-section {
+    min-height: auto;
+    padding-bottom: 85px;
+  }
+
+  .booking-hero-layout {
+    grid-template-columns: minmax(0, 1.25fr) minmax(320px, 0.85fr);
+    gap: 75px;
+    margin-top: 75px;
+  }
+
+  .booking-intro-card {
+    min-height: 0;
+    padding: 38px;
+    border-radius: 24px;
+  }
+
+  .booking-intro-card h2 {
+    margin-bottom: 28px;
+    font-size: clamp(1.9rem, 2.2vw, 2.65rem);
+  }
+
+  .booking-intro-card p {
+    font-size: clamp(1.15rem, 1.4vw, 1.65rem);
+    line-height: 1.4;
+  }
+
+  .booking-button-row {
+    gap: 18px;
+    margin-top: 32px;
+  }
+
+  .booking-contact-button {
+    min-width: 0;
+    min-height: 60px;
+    padding: 12px 24px;
+    font-size: clamp(1.05rem, 1.3vw, 1.5rem);
+  }
+
+  .booking-hero-image {
+    height: min(65vh, 570px);
+    min-height: 390px;
+    border-radius: 24px;
+  }
+
+  .booking-process-section,
+  .booking-pricing-section,
+  .booking-deposit-section,
+  .booking-policy-section,
+  .booking-consent-section,
+  .booking-payment-section {
+    padding: 150px 0;
+  }
+
+  .booking-step-intro h2 {
+    margin-bottom: 70px;
+    font-size: clamp(3rem, 4.2vw, 5rem);
+  }
+
+  .booking-step-number {
+    margin-bottom: 36px;
+    font-size: clamp(3.25rem, 4vw, 4.7rem);
+  }
+
+  .booking-step-intro h3 {
+    margin-bottom: 24px;
+    font-size: clamp(1.55rem, 1.95vw, 2.3rem);
+  }
+
+  .booking-step-intro > p {
+    font-size: clamp(1.1rem, 1.35vw, 1.6rem);
+    line-height: 1.4;
+  }
+
+  /* Template */
+  .booking-template-card {
+    border-radius: 24px;
+  }
+
+  .booking-template-card h3 {
+    padding: 25px;
+    font-size: clamp(1.55rem, 1.95vw, 2.3rem);
+  }
+
+  .booking-template-content {
+    padding: 38px 50px;
+  }
+
+  .booking-template-content p {
+    margin-bottom: 22px;
+    font-size: clamp(1.1rem, 1.3vw, 1.55rem);
+  }
+
+  /* Rates and deposits */
+  .pricing-card-stack,
+  .deposit-card-stack,
+  .consent-card-stack {
+    gap: 20px;
+  }
+
+  .rate-card,
+  .deposit-card-stack .rate-card {
+    min-height: 0;
+    padding: 30px 36px;
+    border-radius: 24px;
+  }
+
+  .rate-card h3 {
+    margin-bottom: 12px;
+    font-size: clamp(1.5rem, 1.85vw, 2.2rem);
+  }
+
+  .rate-card p {
+    font-size: clamp(1.15rem, 1.45vw, 1.75rem);
+  }
+
+  .deposit-note,
+  .medical-note {
+    margin-top: 100px;
+  }
+
+  /* Policy and payment accordions */
+  .booking-accordion-item summary {
+    min-height: 100px;
+    padding: 20px;
+    font-size: clamp(1.4rem, 1.8vw, 2.15rem);
+  }
+
+  .booking-accordion-content {
+    padding: 18px 38px 65px;
+  }
+
+  .booking-accordion-content p {
+    margin-bottom: 19px;
+    font-size: clamp(1.05rem, 1.2vw, 1.45rem);
+    line-height: 1.4;
+  }
+
+  /* Consent */
+  .consent-card {
+    padding: 30px;
+    border-radius: 24px;
+  }
+
+  .consent-card h3 {
+    margin-bottom: 24px;
+    font-size: clamp(1.5rem, 1.85vw, 2.15rem);
+  }
+
+  .consent-card p {
+    margin-bottom: 22px;
+    font-size: clamp(1.05rem, 1.2vw, 1.4rem);
+    line-height: 1.4;
+  }
+
+  /* Payment */
+  .payment-content,
+  .grabpay-content {
+    padding: 22px 38px 60px;
+  }
+
+  .paynow-content > p,
+  .grabpay-intro-text {
+    font-size: clamp(1.1rem, 1.3vw, 1.55rem);
+  }
+
+  .paynow-qr-wrap img {
+    width: 180px;
+    height: 180px;
+  }
+
+  .grabpay-options {
+    grid-template-columns: 1fr;
+  }
+
+  .grabpay-option > h3 {
+    font-size: 1.8rem;
+  }
+
+  .grabpay-option > h4 {
+    font-size: 1.35rem;
+  }
+
+  .grabpay-option > p,
+  .grabpay-example > p,
+  .grabpay-example > div {
+    font-size: 1.05rem;
+  }
+
+  /* Final contact */
+  .booking-contact-section {
+    min-height: auto;
+    padding: 110px 0 95px;
+  }
+
+  .booking-contact-layout {
+    width: min(100% - 120px, 1360px);
+    gap: 75px;
+  }
+
+  .booking-contact-copy h2 {
+    margin-bottom: 42px;
+    font-size: clamp(3.6rem, 4.8vw, 5.8rem);
+  }
+
+  .booking-contact-copy p {
+    font-size: clamp(1.35rem, 1.7vw, 2.05rem);
+  }
+
+  .booking-contact-actions .booking-contact-button {
+    min-height: 85px;
+    font-size: clamp(1.6rem, 2vw, 2.4rem);
+  }
+
+  .booking-social-links {
+    margin-top: 65px;
+  }
+}
+
+/* =========================================================
+   BOOKING DESKTOP — spacing, notes, and card alignment
+   ========================================================= */
+
+@media (min-width: 1001px) {
+  /* Space the left and right sides apart */
+  .booking-process-layout,
+  .booking-pricing-layout,
+  .booking-deposit-layout,
+  .booking-policy-layout,
+  .booking-consent-layout,
+  .booking-payment-layout {
+    width: min(100% - 120px, 1500px);
+    justify-content: space-between;
+    column-gap: clamp(65px, 8vw, 150px);
+  }
+
+  .booking-process-layout {
+    grid-template-columns: minmax(0, 520px) minmax(0, 665px);
+  }
+
+  .booking-pricing-layout {
+    grid-template-columns: minmax(0, 640px) minmax(0, 430px);
+  }
+
+  .booking-deposit-layout {
+    grid-template-columns: minmax(0, 445px) minmax(0, 610px);
+  }
+
+  .booking-policy-layout {
+    grid-template-columns: minmax(0, 700px) minmax(0, 410px);
+  }
+
+  .booking-consent-layout {
+    grid-template-columns: minmax(0, 430px) minmax(0, 710px);
+  }
+
+  .booking-payment-layout {
+    grid-template-columns: minmax(0, 720px) minmax(0, 410px);
+  }
+
+  /* Wider deposit note, extending into the empty middle space */
+  .deposit-intro {
+    overflow: visible;
+  }
+
+  .deposit-note {
+    display: grid;
+    grid-template-columns: 58px minmax(0, 1fr);
+    align-items: end;
+    gap: 24px;
+    width: 760px;
+    max-width: none;
+    margin-top: 100px;
+  }
+
+  .deposit-note p {
+    min-width: 0;
+    max-width: none;
+    margin: 0;
+    font-size: clamp(0.88rem, 1vw, 1.1rem);
+    line-height: 1.4;
+  }
+
+  /* Keep the medical note within its column */
+  .medical-note {
+    display: grid;
+    grid-template-columns: 58px minmax(0, 1fr);
+    align-items: end;
+    gap: 20px;
+    width: 100%;
+    margin-top: 100px;
+  }
+
+  .medical-note p {
+    min-width: 0;
+    margin: 0;
+    font-size: clamp(0.88rem, 1vw, 1.1rem);
+    line-height: 1.4;
+  }
+
+  /* Move text in both white Custom tattoos cards toward the right */
+  .pricing-card-stack .rate-card-light,
+  .deposit-card-stack .rate-card-light {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: center;
+    padding-right: 48px;
+    text-align: right;
+  }
+
+  .pricing-card-stack .rate-card-light h3,
+  .pricing-card-stack .rate-card-light p,
+  .deposit-card-stack .rate-card-light h3,
+  .deposit-card-stack .rate-card-light p {
+    width: 100%;
+    text-align: right;
+  }
+}
+
+/* Prevent the wider note from reaching the cards on narrower desktops */
+@media (min-width: 1001px) and (max-width: 1399px) {
+  .deposit-note {
+    width: 100%;
+  }
+}
+
+
+/* =========================================================
+   Align left-side warning notes with bottom right-side cards
+   ========================================================= */
+
+@media (min-width: 1001px) {
+  /*
+    Make both columns stretch to the same height.
+    Then the note can sit at the bottom of the left column.
+  */
+  .booking-deposit-layout,
+  .booking-consent-layout {
+    align-items: stretch;
+  }
+
+  /*
+    Left columns become vertical layouts:
+    main step content stays at top,
+    warning note is pushed all the way down.
+  */
+  .deposit-intro,
+  .consent-intro {
+    display: flex;
+    min-height: 100%;
+    flex-direction: column;
+  }
+
+  /*
+    Remove the old manual top margin and push the notes
+    down to match the final card's lower edge.
+  */
+  .deposit-note,
+  .medical-note {
+    margin-top: auto;
+    margin-bottom: 0;
+  }
+
+  /*
+    Keep the wider deposit note but prevent it from
+    changing the position of the icon/text baseline.
+  */
+  .deposit-note {
+    width: 760px;
+    max-width: none;
+  }
+
+  /*
+    The medical note should stay within the left consent column,
+    but line up with the bottom of the lower consent card.
+  */
+  .medical-note {
+    width: 100%;
+    max-width: 430px;
+  }
+}
+
+/* =========================================================
+   Consent section — improve vertical balance and note width
+   ========================================================= */
+
+@media (min-width: 1001px) {
+  /*
+    The consent intro fills the same height as the two cards,
+    but the main copy is moved down from the top so it feels
+    centred against the card stack.
+  */
+  .consent-intro {
+    position: relative;
+    padding-top: 155px;
+  }
+
+  /*
+    Keep the warning at the bottom, but allow its text to use
+    more horizontal space so it wraps into cleaner lines.
+  */
+  .consent-intro .medical-note {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+
+    display: grid;
+    grid-template-columns: 58px minmax(0, 1fr);
+    align-items: end;
+    gap: 24px;
+
+    width: 680px;
+    max-width: none;
+    margin: 0;
+  }
+
+  .consent-intro .medical-note p {
+    max-width: none;
+    margin: 0;
+    font-size: clamp(0.88rem, 1vw, 1.1rem);
+    line-height: 1.4;
+  }
+}
+
+/*
+  On normal-width desktops, keep the medical note within
+  the available column so it does not run into the cards.
+*/
+@media (min-width: 1001px) and (max-width: 1399px) {
+  .consent-intro {
+    padding-top: 100px;
+  }
+
+  .consent-intro .medical-note {
+    position: static;
+    width: 100%;
+    margin-top: auto;
+  }
+}
+
+/* Subtle scroll reveal — only elements marked by reveal.js */
+.reveal-on-scroll {
+  opacity: 0;
+  transform: translateY(16px);
+  transition:
+    opacity 650ms ease,
+    transform 650ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.reveal-on-scroll.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal-on-scroll {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+
+/* Match the social-icon hover effect across all three pages */
+.booking-social-links a {
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.booking-social-links a:hover {
+  opacity: 0.64;
+  transform: translateY(-3px);
+}
+
+.booking-social-links a:focus-visible {
+  outline: 2px solid #000000;
+  outline-offset: 5px;
+  border-radius: 4px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .booking-social-links a {
+    transition: none;
+  }
+
+  .booking-social-links a:hover {
+    transform: none;
+  }
+}
+
+/* ONE shared desktop header for About, Aftercare, and Booking. */
+html { scrollbar-gutter: stable; }
+
+@media (min-width: 1001px) {
+  .about-hero,
+  .aftercare-hero,
+  .booking-hero-section { padding-top: 60px; }
+
+  .about-top-row,
+  .aftercare-page-header,
+  .booking-page-header {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 590px;
+    align-items: start;
+    column-gap: 32px;
+    width: min(calc(100% - 100px), 1400px);
+    margin: 0 auto;
+    padding-top: 0;
+  }
+
+  .about-nav,
+  .aftercare-nav,
+  .booking-nav {
+    display: grid;
+    grid-template-columns: 72px 82px 126px 94px;
+    justify-content: space-between;
+    align-items: start;
+    gap: 0;
+    width: 590px;
+    padding-top: 5px;
+  }
+
+  .about-nav a,
+  .aftercare-nav a,
+  .booking-nav a { white-space: nowrap; }
+}
+
+/* About header is outside its content container. */
+@media (max-width: 1000px) {
+  .about-top-row {
+    flex-direction: column;
+    gap: 28px;
+    width: min(calc(100% - 48px), 720px);
+    margin: 0 auto;
+  }
+  .about-nav { flex-wrap: wrap; gap: 20px 30px; padding-top: 0; }
+  .about-nav a { font-size: 1.1rem; }
+}
+
+@media (max-width: 560px) {
+  .about-top-row { width: min(calc(100% - 36px), 500px); }
+  .about-nav { gap: 15px 21px; }
+  .about-nav a { font-size: 0.96rem; }
+}
+
+
+/* Smooth Aftercare and Booking accordions */
+@supports (interpolate-size: allow-keywords) {
+  .aftercare-item,
+  .booking-accordion-item {
+    interpolate-size: allow-keywords;
+  }
+
+  .aftercare-item::details-content,
+  .booking-accordion-item::details-content {
+    height: 0;
+    overflow: clip;
+    transition:
+      height 350ms ease,
+      content-visibility 350ms ease allow-discrete;
+  }
+
+  .aftercare-item[open]::details-content,
+  .booking-accordion-item[open]::details-content {
+    height: auto;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .aftercare-item::details-content,
+  .booking-accordion-item::details-content {
+    transition: none;
+  }
+}
+
+/* Home page entrance */
+@keyframes home-fade-in {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+.home-page .brand-name,
+.home-page .home-nav,
+.home-page .home-copy,
+.home-page .social-links,
+.home-page .video-card {
+  animation: home-fade-in 700ms ease-out both;
+}
+
+.home-page .brand-name { animation-delay: 100ms; }
+.home-page .home-nav { animation-delay: 200ms; }
+.home-page .home-copy { animation-delay: 300ms; }
+.home-page .social-links { animation-delay: 400ms; }
+.home-page .video-card { animation-delay: 450ms; }
+
+@media (prefers-reduced-motion: reduce) {
+  .home-page .brand-name,
+  .home-page .home-nav,
+  .home-page .home-copy,
+  .home-page .social-links,
+  .home-page .video-card {
+    animation: none;
+  }
+}
+
+/* New Zealand notice */
+.nz-notice {
+  width: min(620px, calc(100% - 32px));
+  max-height: min(85vh, 800px);
+  padding: 0;
+  border: 2px solid #111;
+  border-radius: 22px;
+  background: #fff;
+  color: #111;
+  box-shadow: 0 24px 80px rgba(0, 0, 0, 0.25);
+}
+
+.nz-notice::backdrop {
+  background: rgba(0, 0, 0, 0.65);
+}
+
+.nz-notice-inner {
+  position: relative;
+  padding: clamp(25px, 5vw, 46px);
+}
+
+.nz-notice-close {
+  position: absolute;
+  top: 14px;
+  right: 18px;
+  padding: 0 6px;
+  border: 0;
+  background: transparent;
+  color: #111;
+  cursor: pointer;
+  font-size: 2rem;
+  line-height: 1;
+}
+
+.nz-notice-label {
+  margin: 0 0 8px;
+  color: #606060;
+  font-size: 0.9rem;
+}
+
+.nz-notice h2 {
+  margin: 0 30px 22px 0;
+  font-family: "Anton", Impact, sans-serif;
+  font-size: clamp(2.2rem, 6vw, 3.5rem);
+  font-weight: 400;
+  line-height: 1.05;
+}
+
+.nz-notice p {
+  margin: 0 0 18px;
+  line-height: 1.55;
+}
+
+.nz-notice-artists {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 24px 0;
+}
+
+.nz-notice-artists a {
+  padding: 10px 14px;
+  border: 1px solid #111;
+  border-radius: 999px;
+  color: #111;
+  text-decoration: none;
+}
+
+.nz-notice-artists a:hover,
+.nz-notice-artists a:focus-visible {
+  background: #111;
+  color: #fff;
+}
+
+.nz-notice-done {
+  width: 100%;
+  padding: 14px 20px;
+  border: 0;
+  border-radius: 999px;
+  background: #111;
+  color: #fff;
+  cursor: pointer;
+  font: inherit;
+  font-weight: 700;
+}
+
+@media (max-width: 600px) {
+  .nz-notice {
+    max-height: 85dvh;
+  }
+
+  .nz-notice-artists {
+    flex-direction: column;
+  }
+
+  .nz-notice-artists a {
+    text-align: center;
+  }
+}
+
+@keyframes notice-bounce-in {
+  0% {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  55% {
+    opacity: 1;
+    transform: scale(1.055);
+  }
+  75% {
+    transform: scale(0.98);
+  }
+  90% {
+    transform: scale(1.008);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.nz-notice[open] {
+  animation: notice-bounce-in 650ms ease-out both;
+}
+
+@keyframes notice-backdrop-in {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+.nz-notice[open] {
+  animation: notice-bounce-in 780ms cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.nz-notice[open]::backdrop {
+  animation: notice-backdrop-in 300ms ease-out both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .nz-notice[open],
+  .nz-notice[open]::backdrop {
+    animation: none;
+  }
+}

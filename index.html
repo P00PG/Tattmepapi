@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>TATTMEPAPI | Tattoo Studio</title>
+
+  <meta
+    name="description"
+    content="TAT TME PAPI — Tattoo studio. Discover body art as a form of personal expression."
+  />
+
+  <!-- Fonts: heading/body -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Oswald:wght@500;600;700&display=swap"
+    rel="stylesheet"
+  >
+
+  <link rel="stylesheet" href="styles/main.css" />
+  <link rel="stylesheet" href="styles/mobile.css">
+</head>
+
+<body>
+  <main class="home-page">
+    <section class="home-layout">
+      <!-- Left content -->
+      <div class="home-content">
+        <p class="brand-name">TATTMEPAPI</p>
+
+        <div class="home-copy">
+          <h1>
+            Hallo There!
+          </h1>
+
+          <p class="intro-text">
+            Discover the significance of body art as a form of<br class="desktop-break">
+            personal expression and begin your transformative<br class="desktop-break">
+            journey with us today.
+          </p>
+
+          <div class="social-links" aria-label="Social media links">
+            <!-- Replace the placeholder links with real accounts -->
+            <a
+              href="https://instagram.com/tattmepapi"
+              target="_blank"
+              rel="noopener"
+              aria-label="Visit TATTMEPAPI on Instagram"
+            >
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <rect x="3" y="3" width="18" height="18" rx="5"></rect>
+                <circle cx="12" cy="12" r="4"></circle>
+                <circle cx="17.4" cy="6.6" r="1"></circle>
+              </svg>
+            </a>
+
+<a
+  href="https://wa.me/6580715440"
+  target="_blank"
+  rel="noopener"
+  aria-label="Message TATTMEPAPI on WhatsApp"
+>
+  <img
+    class="social-icon-image whatsapp-image"
+    src="svg/whatsapp-svgrepo-com.svg"
+    alt=""
+  />
+</a>
+
+            <a
+              href="https://t.me/papisonlyfans"
+              target="_blank"
+              rel="noopener"
+              aria-label="Message TATTMEPAPI on Telegram"
+            >
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M21.4 3.6 18.2 20c-.2 1.1-.8 1.4-1.7.9l-5.1-3.7-2.5 2.4c-.3.3-.5.5-1 .5l.4-5.2 9.5-8.6c.4-.4-.1-.6-.6-.3L5.5 13.4.5 11.8c-1.1-.4-1.1-1.1.2-1.6L20.2 2.7c.9-.3 1.7.2 1.2.9Z"></path>
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <nav class="home-nav" aria-label="Main navigation">
+          <a class="active" href="index.html">Home</a>
+          <a href="about.html">About</a>
+          <a href="aftercare.html">Aftercare</a>
+          <a href="booking.html">Booking</a>
+        </nav>
+      </div>
+
+      <!-- Right video -->
+      <div class="video-card">
+        <video
+          id="tattooVideo"
+          class="tattoo-video"
+          autoplay
+          muted
+          loop
+          playsinline
+          poster="images/video-poster.jpg"
+        >
+          <source src="videos/tattooing.mp4" type="video/mp4" />
+          Your browser does not support embedded videos.
+        </video>
+      </div>
+    </section>
+  </main>
+
+  <dialog class="nz-notice" id="nzNotice" aria-labelledby="nzNoticeTitle">
+  <div class="nz-notice-inner">
+    <form method="dialog">
+      <button class="nz-notice-close" type="submit" aria-label="Close notice">
+        &times;
+      </button>
+    </form>
+
+    <p class="nz-notice-label">A little update</p>
+    <h2 id="nzNoticeTitle">Hi from New Zealand!</h2>
+
+    <p>
+      Hi guys! I am in New Zealand right now! Probably playing with sheep,
+      eating meat pies, and finally separating myself from the distractions
+      I have back at home — aka my 2.5k hours of playing Overwatch on Moira
+      alone. Hopefully I’ll be a better person with more willpower and
+      self-control when I come back lolol.
+    </p>
+
+    <p>
+      <strong>Bookings will open in June 2027.</strong> Please keep a lookout
+      then! Meanwhile, if y’all would like to get tattooed, please check out
+      my studio artists:
+    </p>
+
+    <div class="nz-notice-artists">
+      <a href="https://www.instagram.com/dayahisdead?igsh=MThib3ZqdHM1bGdjdQ=="
+         target="_blank" rel="noopener noreferrer">@dayahisdead</a>
+      <a href="https://www.instagram.com/est.tart?igsh=MzVtYmZhOXJqazhs"
+         target="_blank" rel="noopener noreferrer">@est.tart</a>
+      <a href="https://www.instagram.com/ronsoon.tattoo?igsh=MW1nbnphbWJlaTM1MQ=="
+         target="_blank" rel="noopener noreferrer">@ronsoon.tattoo</a>
+    </div>
+
+    <form method="dialog">
+      <button class="nz-notice-done" type="submit">Got it</button>
+    </form>
+  </div>
+</dialog>
+
+  <script src="scripts/main.js"></script>
+<script>
+  const nzNotice = document.getElementById("nzNotice");
+  const navigation = performance.getEntriesByType("navigation")[0];
+
+  if (nzNotice && navigation?.type === "reload") {
+    nzNotice.showModal();
+  }
+</script>
+</body>
+</html>
