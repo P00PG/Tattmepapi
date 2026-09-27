@@ -12,19 +12,22 @@
   .home-layout {
     display: flex;
     flex-direction: column;
-    gap: 36px;
     width: 100%;
+    gap: 16px;
     min-height: 0;
     padding: 32px 24px 60px;
   }
-  .home-content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 30px;
-    width: 100%;
-    padding: 0;
-  }
+
+.home-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+  width: 100%;
+  min-height: 0;                 /* remove the reserved 55svh space */
+  padding: clamp(60px, 12svh, 110px) 0 0;
+  text-align: center;
+}
   .brand-name { font-size: clamp(1.75rem, 5vw, 2.5rem); }
   .home-copy {
     margin: 0;
@@ -43,12 +46,14 @@
     padding: 0;
   }
   .home-nav a { font-size: 1.15rem; }
-  .social-links { margin-top: 24px; }
+  .social-links { margin-top: 8px; }
   .video-card {
     width: 100%;
     height: clamp(300px, 65vw, 650px);
     min-height: 0;
   }
+
+  
 
   /* About */
   .about-hero { min-height: 0; padding: 40px 0 75px; }
@@ -241,4 +246,542 @@
   .grabpay-option > h3,
   .grabpay-option > h4,
   .grabpay-option > p { margin-right: 20px; margin-left: 20px; }
+}
+
+
+/* More compact About, Aftercare, and Booking on narrow phones */
+@media (max-width: 600px) {
+  /* Page titles and navigation */
+  .about-top-row h1,
+  .aftercare-page-header h1,
+  .booking-page-header h1 {
+    font-size: clamp(2.5rem, 10vw, 3.1rem);
+  }
+
+  .about-nav a,
+  .aftercare-nav a,
+  .booking-nav a {
+    font-size: 0.9rem;
+  }
+
+  /* About */
+  .about-hero {
+    padding-top: 30px;
+    padding-bottom: 50px;
+  }
+
+  .about-grid {
+    margin-top: 30px;
+    gap: 16px;
+  }
+
+  .about-image-wrap {
+    aspect-ratio: 1 / 0.8;
+  }
+
+  .about-text-card {
+    padding: 20px;
+  }
+
+  .about-text-content h2 {
+    font-size: 1.25rem;
+  }
+
+  .about-text-content h3 {
+    margin-top: 25px;
+    font-size: 1.05rem;
+  }
+
+  .about-text-content p {
+    font-size: 1rem;
+    line-height: 1.5;
+  }
+
+  /* Aftercare */
+  .aftercare-hero {
+    padding-top: 30px;
+  }
+
+  .aftercare-container {
+    margin-top: 40px;
+  }
+
+  .aftercare-item summary {
+    min-height: 72px;
+    padding: 14px 8px;
+    font-size: 1.25rem;
+  }
+
+  .aftercare-content {
+    padding: 8px 12px 32px;
+  }
+
+  .aftercare-content p {
+    font-size: 1rem;
+    line-height: 1.45;
+  }
+
+  /* Booking */
+  .booking-page-header {
+    padding-top: 30px;
+  }
+
+  .booking-hero-layout {
+    margin-top: 30px;
+    gap: 20px;
+  }
+
+  .booking-intro-card,
+  .rate-card,
+  .deposit-card-stack .rate-card,
+  .consent-card {
+    padding: 20px;
+  }
+
+  .booking-intro-card h2 {
+    font-size: 1.65rem;
+  }
+
+  .booking-process-section,
+  .booking-pricing-section,
+  .booking-deposit-section,
+  .booking-policy-section,
+  .booking-consent-section,
+  .booking-payment-section {
+    padding: 40px 0;
+  }
+
+  .booking-step-intro h2 {
+    margin-bottom: 25px;
+    font-size: 2.45rem;
+  }
+
+  .booking-step-number {
+    font-size: 2.8rem;
+  }
+
+  .booking-step-intro h3 {
+    font-size: 1.4rem;
+  }
+
+  .booking-accordion-item summary {
+    min-height: 76px;
+    font-size: 1.25rem;
+  }
+
+  .booking-contact-copy h2 {
+    font-size: clamp(2.4rem, 9vw, 3.4rem);
+  }
+}
+
+
+/* =========================================================
+   MOBILE REFINEMENTS
+   Put the step headings above their cards, give pages more
+   side breathing room, and scale everything down a notch.
+   ========================================================= */
+
+/* Tablet + phone: step intro (02, 04, 06) goes ABOVE its cards */
+@media (max-width: 1000px) {
+  .pricing-intro,
+  .policy-intro,
+  .payment-intro {
+    order: -1;
+  }
+
+  /* Smaller social icons (Home) */
+  .social-links { gap: 20px; }
+
+  .social-links a {
+    width: 32px;
+    height: 32px;
+    flex-basis: 32px;
+  }
+
+  /* Smaller social icons (Booking) */
+  .booking-social-links { gap: 18px; }
+
+  .booking-social-links a {
+    width: 32px;
+    height: 32px;
+  }
+}
+
+/* Phones */
+@media (max-width: 600px) {
+  :root { --m-gutter: 56px; } /* 28px of space on each side */
+
+  /* ---------- Home ---------- */
+  .social-links { gap: 18px; }
+
+  .social-links a {
+    width: 28px;
+    height: 28px;
+    flex-basis: 28px;
+  }
+
+  /* ---------- Wider side margins everywhere ---------- */
+  .about-top-row,
+  .about-container,
+  .portfolio-container,
+  .aftercare-page-header,
+  .aftercare-container,
+  .booking-page-header,
+  .booking-hero-layout,
+  .booking-process-layout,
+  .booking-pricing-layout,
+  .booking-deposit-layout,
+  .booking-policy-layout,
+  .booking-consent-layout,
+  .booking-payment-layout,
+  .booking-contact-layout {
+    width: calc(100% - var(--m-gutter));
+    max-width: none;
+  }
+
+  /* ---------- Shared page headers ---------- */
+  .about-top-row h1,
+  .aftercare-page-header h1,
+  .booking-page-header h1 {
+    font-size: clamp(2.1rem, 9vw, 2.6rem);
+  }
+
+  .about-top-row,
+  .aftercare-page-header,
+  .booking-page-header { gap: 20px; }
+
+  .about-nav,
+  .aftercare-nav,
+  .booking-nav { gap: 12px 20px; }
+
+  .about-nav a,
+  .aftercare-nav a,
+  .booking-nav a { font-size: 0.85rem; }
+
+  .about-nav a.active::after,
+  .aftercare-nav a.active::after,
+  .booking-nav a.active::after {
+    bottom: -7px;
+    height: 2px;
+  }
+
+  /* ---------- About ---------- */
+  .about-grid { margin-top: 26px; gap: 14px; }
+
+  .about-image-wrap,
+  .about-text-card { border-radius: 18px; }
+
+  .about-text-card { padding: 20px; border-width: 2px; }
+  .about-text-content h2 { font-size: 1.1rem; }
+  .about-text-content h3 { margin: 20px 0 10px; font-size: 0.95rem; }
+  .about-text-content p { font-size: 0.92rem; line-height: 1.5; }
+
+  .about-social-links { gap: 18px; margin-top: 24px; }
+
+  .about-social-links a {
+    width: 26px;
+    height: 26px;
+  }
+
+  .portfolio-section { padding: 30px 0 60px; }
+  .portfolio-tabs { gap: 10px 22px; margin-bottom: 24px; }
+  .portfolio-tab { font-size: 1rem; }
+  .portfolio-tab.active::after { bottom: -7px; height: 2px; }
+  .portfolio-grid { gap: 10px; }
+
+  /* ---------- Aftercare ---------- */
+  .aftercare-container { margin-top: 34px; }
+
+  .aftercare-item summary {
+    min-height: 62px;
+    padding: 12px 6px;
+    font-size: 1.1rem;
+  }
+
+  .aftercare-content { padding: 4px 8px 28px; }
+
+  .aftercare-content p {
+    margin-bottom: 16px;
+    font-size: 0.92rem;
+    line-height: 1.5;
+  }
+
+  /* ---------- Booking: hero ---------- */
+  .booking-hero-layout { margin-top: 26px; gap: 16px; }
+  .booking-hero-section { padding-bottom: 40px; }
+
+  .booking-intro-card {
+    padding: 20px;
+    border-width: 2px;
+    border-radius: 18px;
+  }
+
+  .booking-intro-card h2 { margin-bottom: 12px; font-size: 1.35rem; }
+  .booking-intro-card p { font-size: 0.95rem; line-height: 1.45; }
+  .booking-button-row { gap: 10px; margin-top: 20px; }
+
+  .booking-contact-button {
+    min-height: 46px;
+    padding: 10px 18px;
+    font-size: 0.98rem;
+  }
+
+  .booking-hero-image {
+    height: 240px;
+    border-radius: 18px;
+  }
+
+  /* ---------- Booking: steps ---------- */
+  .booking-process-section,
+  .booking-pricing-section,
+  .booking-deposit-section,
+  .booking-policy-section,
+  .booking-consent-section,
+  .booking-payment-section { padding: 32px 0; }
+
+  .booking-process-layout,
+  .booking-pricing-layout,
+  .booking-deposit-layout,
+  .booking-policy-layout,
+  .booking-consent-layout,
+  .booking-payment-layout { gap: 22px; }
+
+  .booking-step-intro h2 { margin-bottom: 18px; font-size: 1.9rem; }
+  .booking-step-number { margin-bottom: 12px; font-size: 2.2rem; }
+  .booking-step-intro h3 { margin-bottom: 10px; font-size: 1.2rem; }
+  .booking-step-intro > p { font-size: 0.95rem; line-height: 1.45; }
+
+  /* Template card */
+  .booking-template-card { border-width: 2px; border-radius: 18px; }
+
+  .booking-template-card h3 {
+    padding: 16px;
+    border-bottom-width: 2px;
+    font-size: 1.15rem;
+  }
+
+  .booking-template-content { padding: 18px 20px; }
+  .booking-template-content p { margin-bottom: 14px; font-size: 0.92rem; }
+
+  /* Rate / deposit / consent cards */
+  .pricing-card-stack,
+  .deposit-card-stack,
+  .consent-card-stack { gap: 12px; }
+
+  .rate-card,
+  .deposit-card-stack .rate-card {
+    padding: 18px 20px;
+    border-radius: 18px;
+  }
+
+  .rate-card-light,
+  .consent-card-light { border-width: 2px; }
+
+  .rate-card h3 { margin-bottom: 6px; font-size: 1.1rem; }
+  .rate-card p { font-size: 0.92rem; line-height: 1.4; }
+
+  .consent-card { padding: 20px; border-radius: 18px; }
+  .consent-card h3 { margin-bottom: 14px; font-size: 1.1rem; }
+  .consent-card p { margin-bottom: 12px; font-size: 0.9rem; line-height: 1.45; }
+
+  /* Warning notes */
+  .deposit-note,
+  .medical-note,
+  .consent-intro .medical-note {
+    grid-template-columns: 34px minmax(0, 1fr);
+    gap: 12px;
+    margin-top: 22px;
+  }
+
+  .note-icon {
+    width: 34px;
+    height: 34px;
+    border-width: 3px;
+    font-size: 1.4rem;
+  }
+
+  .deposit-note p,
+  .medical-note p { font-size: 0.82rem; line-height: 1.45; }
+
+  /* Accordions — same scale as Aftercare */
+  .booking-accordion-item { border-top-width: 2px; }
+  .booking-accordion-item:last-child { border-bottom-width: 2px; }
+
+  .booking-accordion-item summary {
+    min-height: 62px;
+    padding: 12px 6px;
+    font-size: 1.1rem;
+  }
+
+  .booking-accordion-icon {
+    width: 31px;
+    height: 31px;
+    flex-basis: 31px;
+  }
+
+  .booking-accordion-icon::before,
+  .booking-accordion-icon::after {
+    width: 28px;
+    height: 2px;
+  }
+
+  .booking-accordion-content,
+  .payment-content,
+  .grabpay-content { padding: 4px 8px 28px; }
+
+  .booking-accordion-content p {
+    margin-bottom: 14px;
+    font-size: 0.92rem;
+    line-height: 1.45;
+  }
+
+  /* PayNow */
+  .paynow-content { gap: 18px; }
+  .paynow-content > p { font-size: 0.92rem; line-height: 1.45; text-align: center; }
+  .paynow-qr-wrap img { width: 170px; height: 170px; }
+
+  .paynow-qr-wrap span,
+  .account-button {
+    padding: 6px 18px;
+    border-width: 2px;
+    font-size: 0.9rem;
+  }
+
+  .account-actions { gap: 8px; margin-bottom: 14px; }
+
+  /* GrabPay */
+  .grabpay-intro-text { margin-bottom: 14px; font-size: 0.95rem; }
+  .grabpay-warning-text { margin-bottom: 20px; font-size: 0.82rem; }
+  .grabpay-options { gap: 14px; }
+
+  .grabpay-option { border-width: 2px; border-radius: 18px; }
+
+  .grabpay-option > h3,
+  .grabpay-option > h4,
+  .grabpay-option > p { margin-right: 18px; margin-left: 18px; }
+
+  .grabpay-option > h3 { margin-top: 18px; margin-bottom: 8px; font-size: 1.15rem; }
+  .grabpay-option > h4 { margin-bottom: 12px; font-size: 1rem; }
+  .grabpay-option > p { margin-bottom: 18px; font-size: 0.9rem; line-height: 1.45; }
+
+  .grabpay-example { border-top-width: 2px; }
+
+  .grabpay-example > p {
+    padding: 12px 14px;
+    border-bottom-width: 1px;
+    font-size: 0.88rem;
+  }
+
+  .grabpay-example > div {
+    gap: 10px;
+    min-height: 0;
+    padding: 12px 14px;
+    border-bottom-width: 1px;
+    font-size: 0.84rem;
+  }
+
+  .grabpay-example strong { font-size: 0.9rem; }
+
+  /* ---------- Booking: final contact ---------- */
+  .booking-contact-section { padding: 50px 0 60px; }
+  .booking-contact-layout { gap: 24px; }
+
+  .booking-contact-copy h2 {
+    margin-bottom: 16px;
+    font-size: clamp(2rem, 8.5vw, 2.5rem);
+  }
+
+  .booking-contact-copy p { font-size: 1rem; line-height: 1.45; }
+  .booking-contact-actions { gap: 10px; }
+
+  .booking-contact-actions .booking-contact-button {
+    min-height: 52px;
+    font-size: 1.1rem;
+  }
+
+  .booking-social-links { gap: 16px; margin-top: 16px; }
+
+  .booking-social-links a {
+    width: 26px;
+    height: 26px;
+  }
+}
+
+/* Fixes: desktop-only line breaks on Home, and the tall open
+   Aftercare header that was leaking onto mobile */
+@media (max-width: 1000px) {
+  .desktop-break { display: none; }
+  .aftercare-item[open] summary { min-height: 112px; }
+}
+
+@media (max-width: 600px) {
+  .aftercare-item[open] summary { min-height: 62px; }
+}
+
+/* Booking 02 + 03: right-align text in the white cards (matches desktop) */
+@media (max-width: 1000px) {
+  .pricing-card-stack .rate-card-light,
+  .deposit-card-stack .rate-card-light {
+    text-align: right;
+  }
+}
+
+/* =========================================================
+   Home (mobile): bigger menu + more space below it
+   ========================================================= */
+@media (max-width: 1000px) {
+  .home-nav {
+    flex-wrap: wrap;          /* safety net: never cut off */
+    gap: 14px 32px;
+    margin-bottom: 48px;      /* space between menu and TATTMEPAPI */
+  }
+
+  .home-nav a {
+    font-size: 1.4rem;
+    white-space: nowrap;
+  }
+
+  .home-nav a::after { bottom: -9px; }
+}
+
+@media (max-width: 600px) {
+  .home-nav {
+    gap: 12px clamp(14px, 4.5vw, 22px);
+    margin-bottom: 40px;
+  }
+
+  .home-nav a {
+    font-size: clamp(1.1rem, 5.2vw, 1.35rem);
+  }
+}
+
+/* Home (mobile): a little more breathing room between each piece */
+@media (max-width: 1000px) {
+  .home-content { gap: 30px; }       /* TATTMEPAPI ↔ Hello There! (was 24px) */
+  .intro-text { margin-top: 26px; }  /* Hello There! ↔ Discover… (was 20px) */
+  .social-links { margin-top: 20px; }/* Discover… ↔ icons (was 8px) */
+  .home-layout { gap: 34px; }        /* icons ↔ video (was 26px) */
+}
+
+/* Booking template copy icon (phones) */
+@media (max-width: 600px) {
+  .booking-template-card .booking-template-header h3 {
+    padding-right: 52px;
+    padding-left: 52px;
+  }
+
+  .template-copy-button { right: 8px; }
+
+  .template-copy-button svg {
+    width: 22px;
+    height: 22px;
+  }
+}
+
+/* Footer (phones) */
+@media (max-width: 600px) {
+  .site-footer {
+    padding: 16px 18px 28px;
+    font-size: 0.8rem;
+  }
 }

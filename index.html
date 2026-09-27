@@ -8,7 +8,7 @@
 
   <meta
     name="description"
-    content="TAT TME PAPI — Tattoo studio. Discover body art as a form of personal expression."
+    content="TATTMEPAPI — Tattoo studio. Discover body art as a form of personal expression."
   />
 
   <!-- Fonts: heading/body -->
@@ -16,7 +16,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
   <link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Oswald:wght@500;600;700&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Anton&family=DM+Sans:wght@400;500;600;700&display=swap"
     rel="stylesheet"
   >
 
@@ -33,13 +33,13 @@
 
         <div class="home-copy">
           <h1>
-            Hallo There!
+            Hello There!
           </h1>
 
           <p class="intro-text">
             Discover the significance of body art as a form of<br class="desktop-break">
             personal expression and begin your transformative<br class="desktop-break">
-            journey with us today.
+            journey with me today.
           </p>
 
           <div class="social-links" aria-label="Social media links">
@@ -47,7 +47,7 @@
             <a
               href="https://instagram.com/tattmepapi"
               target="_blank"
-              rel="noopener"
+              rel="noopener noreferrer"
               aria-label="Visit TATTMEPAPI on Instagram"
             >
               <svg viewBox="0 0 24 24" aria-hidden="true">
@@ -60,7 +60,7 @@
 <a
   href="https://wa.me/6580715440"
   target="_blank"
-  rel="noopener"
+  rel="noopener noreferrer"
   aria-label="Message TATTMEPAPI on WhatsApp"
 >
   <img
@@ -73,7 +73,7 @@
             <a
               href="https://t.me/papisonlyfans"
               target="_blank"
-              rel="noopener"
+              rel="noopener noreferrer"
               aria-label="Message TATTMEPAPI on Telegram"
             >
               <svg viewBox="0 0 24 24" aria-hidden="true">
@@ -84,7 +84,7 @@
         </div>
 
         <nav class="home-nav" aria-label="Main navigation">
-          <a class="active" href="index.html">Home</a>
+          <a class="active" href="index.html" aria-current="page">Home</a>
           <a href="about.html">About</a>
           <a href="aftercare.html">Aftercare</a>
           <a href="booking.html">Booking</a>
@@ -101,6 +101,7 @@
           loop
           playsinline
           poster="images/video-poster.jpg"
+          aria-hidden="true"
         >
           <source src="videos/tattooing.mp4" type="video/mp4" />
           Your browser does not support embedded videos.
@@ -108,6 +109,10 @@
       </div>
     </section>
   </main>
+
+  <footer class="site-footer">
+    <p>&copy; 2026 TATTMEPAPI</p>
+  </footer>
 
   <dialog class="nz-notice" id="nzNotice" aria-labelledby="nzNoticeTitle">
   <div class="nz-notice-inner">
@@ -144,24 +149,11 @@
     </div>
 
     <form method="dialog">
-      <button class="nz-notice-done" type="submit">Got it</button>
+      <button class="nz-notice-done" type="submit" autofocus>Got it</button>
     </form>
   </div>
 </dialog>
 
   <script src="scripts/main.js"></script>
-<script>
-  const nzNotice = document.getElementById("nzNotice");
-  const navigation = performance.getEntriesByType("navigation")[0];
-  const hasVisitedHome = sessionStorage.getItem("nzNoticeSeen");
-
-  if (nzNotice) {
-    if (!hasVisitedHome || navigation?.type === "reload") {
-      nzNotice.showModal();
-    }
-
-    sessionStorage.setItem("nzNoticeSeen", "true");
-  }
-</script>
 </body>
 </html>

@@ -54,7 +54,7 @@
               class="booking-contact-button whatsapp-button"
               href="https://wa.me/6580715440?text=Hi%20Papi%2C%20I%E2%80%99d%20like%20to%20make%20a%20tattoo%20booking%20enquiry."
               target="_blank"
-              rel="noopener"
+              rel="noopener noreferrer"
             >
               Book via WhatsApp
             </a>
@@ -63,7 +63,7 @@
               class="booking-contact-button telegram-button"
               href="https://t.me/tattmepapi"
               target="_blank"
-              rel="noopener"
+              rel="noopener noreferrer"
             >
               Book via Telegram
             </a>
@@ -98,7 +98,28 @@
         </div>
 
         <article class="booking-template-card">
-          <h3>Booking enquiry template</h3>
+          <div class="booking-template-header">
+            <h3>Booking enquiry template</h3>
+
+            <button
+              class="template-copy-button"
+              id="templateCopy"
+              type="button"
+              aria-label="Copy booking enquiry template"
+              title="Copy template"
+            >
+              <svg class="icon-copy" viewBox="0 0 24 24" aria-hidden="true">
+                <rect x="8.5" y="8.5" width="12" height="12" rx="2.5"></rect>
+                <path d="M15.5 8.5V6A2.5 2.5 0 0 0 13 3.5H6A2.5 2.5 0 0 0 3.5 6v7A2.5 2.5 0 0 0 6 15.5h2.5"></path>
+              </svg>
+
+              <svg class="icon-check" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M4.5 12.5l5 5 10-11"></path>
+              </svg>
+            </button>
+
+            <span class="visually-hidden" id="templateCopyStatus" aria-live="polite"></span>
+          </div>
 
           <div class="booking-template-content">
             <p>Name:</p>
@@ -130,6 +151,7 @@
 
             <p>Additional questions or comments:</p>
           </div>
+
         </article>
       </div>
     </section>
@@ -139,7 +161,7 @@
       <div class="booking-pricing-layout">
         <div class="pricing-card-stack">
           <article class="rate-card rate-card-dark">
-            <h3>Starting Price</h3>
+            <h3>Starting price</h3>
             <p>$100</p>
           </article>
 
@@ -352,8 +374,10 @@
             <h3>Before your appointment ...</h3>
 
             <p>
-              Do not consume alcohol, recreational drugs, or blood thinners for
-              36 hours before your appointment.
+              Do not consume alcohol or recreational drugs for 36 hours before
+              your appointment. If you take blood-thinning medication, check
+              with your doctor first — please don’t stop prescribed medication
+              on your own.
             </p>
 
             <p>
@@ -420,6 +444,8 @@
                 <img
                   src="images/qrcode.jpg"
                   alt="PayNow QR code for TATTMEPAPI"
+                  width="235"
+                  height="235"
                 />
 
                 <span>UEN 53477685W</span>
@@ -435,7 +461,31 @@
             </summary>
 
             <div class="booking-accordion-content">
-              <p>POSB Savings account: <strong>170358678</strong></p>
+              <p>
+                POSB Savings account:
+                <strong
+                  class="account-number"
+                  id="accountNumber"
+                  data-account="MTcwMzU4Njc4"
+                  aria-live="polite"
+                >•••••8678</strong>
+              </p>
+
+              <div class="account-actions">
+                <button
+                  class="account-button"
+                  id="accountToggle"
+                  type="button"
+                  aria-controls="accountNumber"
+                  aria-expanded="false"
+                >
+                  Show number
+                </button>
+
+                <button class="account-button" id="accountCopy" type="button">
+                  Copy number
+                </button>
+              </div>
 
               <p>
                 Transfer the confirmed deposit or quoted amount only after the
@@ -566,7 +616,7 @@
             class="booking-contact-button whatsapp-button"
             href="https://wa.me/6580715440?text=Hi%20Papi%2C%20I%20have%20a%20question%20before%20booking."
             target="_blank"
-            rel="noopener"
+            rel="noopener noreferrer"
           >
             WhatsApp
           </a>
@@ -575,17 +625,17 @@
             class="booking-contact-button telegram-button"
             href="https://t.me/tattmepapi"
             target="_blank"
-            rel="noopener"
+            rel="noopener noreferrer"
           >
             Telegram
           </a>
 
-          <div class="booking-social-links" aria-label="Social links">
+          <div class="booking-social-links" role="group" aria-label="Social links">
             <a
               href="https://instagram.com/tattmepapi"
               target="_blank"
-              rel="noopener"
-              aria-label="Instagram"
+              rel="noopener noreferrer"
+              aria-label="Visit TATTMEPAPI on Instagram"
             >
               <svg viewBox="0 0 24 24" aria-hidden="true">
                 <rect x="3" y="3" width="18" height="18" rx="5"></rect>
@@ -597,8 +647,8 @@
             <a
               href="https://wa.me/6580715440"
               target="_blank"
-              rel="noopener"
-              aria-label="WhatsApp"
+              rel="noopener noreferrer"
+              aria-label="Message TATTMEPAPI on WhatsApp"
             >
               <img src="svg/whatsapp-svgrepo-com.svg" alt="" />
             </a>
@@ -606,8 +656,8 @@
             <a
               href="https://t.me/papisonlyfans"
               target="_blank"
-              rel="noopener"
-              aria-label="Telegram"
+              rel="noopener noreferrer"
+              aria-label="Message TATTMEPAPI on Telegram"
             >
               <svg class="telegram-icon" viewBox="0 0 24 24" aria-hidden="true">
                 <path d="M21.4 3.6 18.2 20c-.2 1.1-.8 1.4-1.7.9l-5.1-3.7-2.5 2.4c-.3.3-.5.5-1 .5l.4-5.2 9.5-8.6c.4-.4-.1-.6-.6-.3L5.5 13.4.5 11.8c-1.1-.4-1.1-1.1.2-1.6L20.2 2.7c.9-.3 1.7.2 1.2.9Z"></path>
@@ -619,8 +669,11 @@
     </section>
   </main>
 
-  <script src="scripts/about.js"></script>
-<script src="scripts/reveal.js"></script>
-</body>
+  <footer class="site-footer">
+    <p>&copy; 2026 TATTMEPAPI</p>
+  </footer>
+
+<script src="scripts/booking.js"></script>
+  <script src="scripts/reveal.js"></script>
 </body>
 </html>
