@@ -375,10 +375,6 @@ body {
   stroke-width: 1.8;
 }
 
-.about-social-links .telegram-icon {
-  fill: currentColor;
-  stroke: none;
-}
 
 /* PORTFOLIO */
 
@@ -973,9 +969,6 @@ body.lightbox-open {
   background: #28513f;
 }
 
-.telegram-button {
-  background: #2d6170;
-}
 
 .booking-hero-image {
   height: min(69vh, 707px);
@@ -1516,10 +1509,6 @@ body.lightbox-open {
   stroke-width: 1.8;
 }
 
-.booking-social-links .telegram-icon {
-  fill: currentColor;
-  stroke: none;
-}
 
 /* =========================================================
    Smaller desktop scale — About, Aftercare, Booking only
@@ -2157,7 +2146,7 @@ html { scrollbar-gutter: stable; }
   .aftercare-page-header,
   .booking-page-header {
     display: grid;
-    grid-template-columns: minmax(0, 1fr) 590px;
+    grid-template-columns: minmax(0, 1fr) 680px;
     align-items: start;
     column-gap: 32px;
     width: min(calc(100% - 100px), 1400px);
@@ -2169,11 +2158,11 @@ html { scrollbar-gutter: stable; }
   .aftercare-nav,
   .booking-nav {
     display: grid;
-    grid-template-columns: 72px 82px 126px 94px;
+    grid-template-columns: 72px 82px 126px 94px 48px;
     justify-content: space-between;
     align-items: start;
     gap: 0;
-    width: 590px;
+    width: 680px;
     padding-top: 5px;
   }
 
@@ -2448,126 +2437,6 @@ html { scrollbar-gutter: stable; }
   }
 }
 
-/* Masked bank account number — matches the PayNow UEN pill */
-.account-number {
-  font-variant-numeric: tabular-nums;
-  letter-spacing: 0.04em;
-  white-space: nowrap;
-}
-
-.account-actions {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 12px;
-  margin: 4px 0 24px;
-}
-
-.account-button {
-  padding: 8px 24px;
-  border: 3px solid #111;
-  border-radius: 999px;
-  background: #fff;
-  color: #000;
-  cursor: pointer;
-  font: inherit;
-  font-size: 1.05rem;
-  font-weight: 700;
-  letter-spacing: -0.02em;
-  transition: background-color 0.2s ease, color 0.2s ease;
-}
-
-@media (hover: hover) {
-  .account-button:hover {
-    background: #111;
-    color: #fff;
-  }
-}
-
-.account-button:focus-visible {
-  outline: 3px solid #000;
-  outline-offset: 4px;
-}
-
-@media (max-width: 600px) {
-  .account-button {
-    width: 100%;
-  }
-}
-
-/* Booking enquiry template — copy icon in the header */
-.booking-template-header {
-  position: relative;
-}
-
-.booking-template-card .booking-template-header h3 {
-  padding-right: 80px;
-  padding-left: 80px;
-}
-
-.template-copy-button {
-  position: absolute;
-  top: 50%;
-  right: 22px;
-  display: grid;
-  width: 44px;
-  height: 44px;
-  place-items: center;
-  padding: 0;
-  border: 0;
-  border-radius: 10px;
-  background: transparent;
-  color: #000;
-  cursor: pointer;
-  transform: translateY(-50%);
-  transition: opacity 0.2s ease;
-}
-
-.template-copy-button svg {
-  grid-area: 1 / 1;
-  width: 28px;
-  height: 28px;
-  fill: none;
-  stroke: currentColor;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-  stroke-width: 1.8;
-  transition: opacity 0.2s ease, transform 0.2s ease;
-}
-
-.template-copy-button .icon-check {
-  opacity: 0;
-  transform: scale(0.6);
-  stroke-width: 2.2;
-}
-
-.template-copy-button.is-copied .icon-copy {
-  opacity: 0;
-  transform: scale(0.6);
-}
-
-.template-copy-button.is-copied .icon-check {
-  opacity: 1;
-  transform: scale(1);
-}
-
-@media (hover: hover) {
-  .template-copy-button:hover { opacity: 0.6; }
-}
-
-.template-copy-button:focus-visible {
-  outline: 2px solid #000;
-  outline-offset: 2px;
-}
-
-.visually-hidden {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  overflow: hidden;
-  clip: rect(0 0 0 0);
-  white-space: nowrap;
-}
 
 /* Footer (all pages) */
 .site-footer {
@@ -2584,3 +2453,552 @@ html { scrollbar-gutter: stable; }
 
 /* Popup starts focused on itself (no ring shown on open) */
 .nz-notice-inner:focus { outline: none; }
+
+/* =========================================================
+   Booking form (replaces the enquiry template)
+   ========================================================= */
+
+.form-button {
+  background: #111;
+}
+
+.booking-process-layout {
+  align-items: start;
+}
+
+.booking-form {
+  display: grid;
+  gap: 24px;
+  padding: 40px 50px 44px;
+}
+
+.booking-field {
+  display: grid;
+  gap: 6px;
+}
+
+.booking-field[hidden] {
+  display: none;
+}
+
+.booking-field label {
+  font-size: clamp(1.1rem, 1.3vw, 1.4rem);
+  letter-spacing: -0.035em;
+  line-height: 1.15;
+}
+
+.booking-field-optional {
+  color: #5a5a5a;
+  font-size: 0.73em;
+  font-style: italic;
+}
+
+.booking-field-hint {
+  margin-top: -2px;
+  font-size: 0.85rem;
+  line-height: 1.35;
+}
+
+.booking-field input,
+.booking-field textarea {
+  width: 100%;
+  margin-top: 2px;
+  padding: 12px 14px;
+  border: 2px solid #111;
+  border-radius: 12px;
+  background: #fff;
+  color: #000;
+  font: inherit;
+  font-size: 1rem;
+  line-height: 1.4;
+}
+
+.booking-field textarea {
+  min-height: 3.2em;
+  resize: vertical;
+}
+
+.booking-field input::placeholder,
+.booking-field textarea::placeholder {
+  color: #9a9a9a;
+}
+
+.booking-field input:focus-visible,
+.booking-field textarea:focus-visible {
+  outline: 2px solid #000;
+  outline-offset: 2px;
+}
+
+.booking-field input:user-invalid,
+.booking-field textarea:user-invalid {
+  border-color: #b3261e;
+}
+
+.booking-form-check {
+  display: grid;
+  grid-template-columns: 22px minmax(0, 1fr);
+  align-items: start;
+  gap: 12px;
+  cursor: pointer;
+  font-size: 1rem;
+  line-height: 1.4;
+}
+
+.booking-form-check input {
+  width: 20px;
+  height: 20px;
+  margin: 1px 0 0;
+  accent-color: #111;
+  cursor: pointer;
+}
+
+.booking-form-note {
+  margin: 0;
+  font-size: 0.9rem;
+  font-style: italic;
+  line-height: 1.4;
+}
+
+.booking-form .booking-form-submit {
+  width: 100%;
+  border: 0;
+  cursor: pointer;
+  font-family: inherit;
+}
+
+.booking-form .booking-form-submit:disabled {
+  cursor: progress;
+  opacity: 0.6;
+}
+
+.booking-form-status {
+  margin: -8px 0 0;
+  font-size: 0.95rem;
+  line-height: 1.4;
+  text-align: center;
+}
+
+.booking-form-status:empty {
+  display: none;
+}
+
+/* Spam trap field — hidden from visitors */
+.booking-form-trap {
+  position: absolute;
+  left: -9999px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+/* Booking form — tattoo type pills */
+.booking-choice-group {
+  min-width: 0;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+.booking-choice-group legend {
+  margin-bottom: 8px;
+  padding: 0;
+  font-size: clamp(1.1rem, 1.3vw, 1.4rem);
+  letter-spacing: -0.035em;
+  line-height: 1.15;
+}
+
+.booking-choices {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.booking-choice {
+  position: relative;
+  cursor: pointer;
+}
+
+.booking-choice input {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+}
+
+.booking-choice span {
+  display: inline-block;
+  padding: 9px 16px;
+  border: 2px solid #111;
+  border-radius: 999px;
+  background: #fff;
+  color: #000;
+  font-size: 0.95rem;
+  line-height: 1.2;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.booking-choice input:checked + span {
+  background: #111;
+  color: #fff;
+}
+
+.booking-choice input:focus-visible + span {
+  outline: 2px solid #000;
+  outline-offset: 3px;
+}
+
+/* FAQ page: header only at the top, then straight into the sections */
+.faq-page .faq-hero-section {
+  min-height: 0;
+  padding-bottom: 0;
+}
+
+@media (min-width: 1001px) {
+  .faq-page .booking-pricing-section { padding-top: 110px; }
+}
+
+/* Text links inside booking copy (e.g. "FAQ") */
+.booking-intro-card p a,
+.booking-form-check a {
+  color: inherit;
+  font-weight: 700;
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 3px;
+}
+
+/* Underline under the active menu link matches the word's width */
+@media (min-width: 1001px) {
+  .about-nav a,
+  .aftercare-nav a,
+  .booking-nav a {
+    justify-self: start;
+  }
+
+  .about-nav a:last-child,
+  .aftercare-nav a:last-child,
+  .booking-nav a:last-child {
+    justify-self: end;
+  }
+}
+
+/* Keeps short phrases on one line */
+.nowrap { white-space: nowrap; }
+
+/* Booking form on its own, centred on the page */
+.booking-process-layout.booking-form-layout {
+  grid-template-columns: minmax(0, 1fr);
+  justify-content: center;
+}
+
+@media (min-width: 1001px) {
+  .booking-process-layout.booking-form-layout {
+    width: min(100% - 120px, 760px);
+  }
+
+  .booking-process-section:has(.booking-form-layout) {
+    padding-top: 40px;
+  }
+}
+
+/* =========================================================
+   Instagram tab — profile-style grid (3 across, square, tight gaps)
+   ========================================================= */
+.portfolio-grid[hidden],
+.instagram-grid[hidden],
+.instagram-more[hidden],
+.portfolio-tab[hidden] {
+  display: none;
+}
+
+.instagram-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 6px;
+  width: 100%;
+}
+
+.instagram-post {
+  position: relative;
+  display: block;
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+  border-radius: 6px;
+  background: #e7e7e7;
+}
+
+.instagram-post img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.35s ease, opacity 0.35s ease;
+}
+
+@media (hover: hover) {
+  .instagram-post:hover img {
+    opacity: 0.85;
+    transform: scale(1.03);
+  }
+}
+
+.instagram-post:focus-visible {
+  outline: 3px solid #000;
+  outline-offset: 2px;
+}
+
+/* Little icon for videos / multi-photo posts, like Instagram */
+.instagram-badge {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  width: 22px;
+  height: 22px;
+  color: #fff;
+  filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.5));
+  pointer-events: none;
+}
+
+.instagram-badge svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.instagram-badge-video svg {
+  fill: currentColor;
+}
+
+.instagram-badge-carousel svg {
+  fill: none;
+  stroke: currentColor;
+  stroke-linejoin: round;
+  stroke-width: 2;
+}
+
+.instagram-more {
+  margin: 36px 0 0;
+  text-align: center;
+}
+
+.instagram-more a {
+  display: inline-block;
+  padding: 10px 24px;
+  border: 2px solid #111;
+  border-radius: 999px;
+  color: #000;
+  font-weight: 700;
+  text-decoration: none;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+@media (hover: hover) {
+  .instagram-more a:hover {
+    background: #111;
+    color: #fff;
+  }
+}
+
+.instagram-more a:focus-visible {
+  outline: 2px solid #000;
+  outline-offset: 4px;
+}
+
+/* Booking page: no image — intro card and form centred, form a bit wider */
+.booking-hero-layout.booking-hero-single {
+  grid-template-columns: minmax(0, 1fr);
+  justify-content: center;
+}
+
+.booking-hero-single .booking-intro-card {
+  text-align: center;
+}
+
+.booking-hero-single .booking-intro-card p {
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.booking-hero-single .booking-button-row {
+  justify-content: center;
+}
+
+@media (min-width: 1001px) {
+  .booking-hero-layout.booking-hero-single,
+  .booking-process-layout.booking-form-layout {
+    width: min(100% - 120px, 900px);
+  }
+
+  .booking-hero-single { margin-top: 60px; }
+  .booking-hero-section:has(.booking-hero-single) { padding-bottom: 50px; }
+}
+
+/* =========================================================
+   Warning notes (Deposits + Consent): never run under the cards.
+   They fill their column and reach into the gap, stopping 40px
+   short of the cards on any screen width.
+   ========================================================= */
+@media (min-width: 1001px) {
+  .deposit-intro .deposit-note,
+  .consent-intro .medical-note {
+    width: calc(100% + clamp(25px, 8vw - 40px, 110px));
+    max-width: none;
+  }
+}
+
+/* Same, roomier gap between the page header and the content (desktop) */
+@media (min-width: 1001px) {
+  .about-grid { margin-top: 160px; }
+  .aftercare-container { margin-top: 160px; }
+  .booking-hero-layout.booking-hero-single { margin-top: 160px; }
+  .faq-page .booking-pricing-section { padding-top: 160px; }
+}
+
+/* =========================================================
+   Booking page — embedded Jotform + waiver card
+   ========================================================= */
+.jotform-embed {
+  width: 100%;
+  overflow: hidden;
+  border-radius: 24px;
+  scroll-margin-top: 24px;
+}
+
+.jotform-embed iframe {
+  display: block;
+  width: 100%;
+  min-width: 100%;
+  height: 900px; /* starting height; Jotform then fits it to the form */
+  border: 0;
+}
+
+.jotform-fallback {
+  margin: 14px 0 0;
+  color: #5a5a5a;
+  font-size: 0.9rem;
+  text-align: center;
+}
+
+.jotform-fallback a {
+  color: #000;
+  font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.waiver-card {
+  margin-top: 56px;
+  padding: 34px 38px;
+  border: 3px solid #111;
+  border-radius: 24px;
+  text-align: center;
+}
+
+.waiver-card h3 {
+  margin: 0 0 14px;
+  font-size: clamp(1.4rem, 1.8vw, 2rem);
+  letter-spacing: -0.04em;
+  line-height: 1.1;
+}
+
+.waiver-card p {
+  max-width: 560px;
+  margin: 0 auto 24px;
+  font-size: clamp(1rem, 1.15vw, 1.25rem);
+  letter-spacing: -0.03em;
+  line-height: 1.45;
+}
+
+.faq-waiver-button {
+  align-self: flex-start;
+  margin-top: 28px;
+}
+
+/* =========================================================
+   FAQ page — Aftercare-style accordions in small groups
+   ========================================================= */
+.faq-intro {
+  margin: 0 0 8px;
+  color: #5a5a5a;
+  font-size: clamp(1rem, 1.15vw, 1.25rem);
+  text-align: center;
+}
+
+.faq-group-label {
+  margin: 64px 0 14px;
+  color: #5a5a5a;
+  font-family: "Anton", Impact, sans-serif;
+  font-size: clamp(1.05rem, 1.25vw, 1.4rem);
+  font-weight: 400;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+
+.faq-group:first-of-type .faq-group-label {
+  margin-top: 44px;
+}
+
+.faq-container .aftercare-content .faq-note {
+  font-size: 0.9em;
+  font-style: italic;
+}
+
+.faq-container .aftercare-content .faq-example {
+  color: #5a5a5a;
+  font-size: 0.9em;
+}
+
+.faq-container .aftercare-content .faq-note strong,
+.faq-container .aftercare-content .faq-example strong {
+  text-decoration: none;
+}
+
+.faq-inline-button {
+  margin-top: 4px;
+  font-size: clamp(1rem, 1.2vw, 1.3rem);
+}
+
+.faq-contact {
+  margin-top: 90px;
+  text-align: center;
+}
+
+.faq-contact h2 {
+  margin: 0 0 16px;
+  font-family: "Anton", Impact, sans-serif;
+  font-size: clamp(2.2rem, 3.4vw, 3.6rem);
+  font-weight: 400;
+  line-height: 1.05;
+  text-transform: uppercase;
+}
+
+.faq-contact p {
+  max-width: 620px;
+  margin: 0 auto 28px;
+  font-size: clamp(1rem, 1.2vw, 1.3rem);
+  line-height: 1.45;
+}
+
+
+/* =========================================================
+   Warning notes — fit the real space on every screen.
+   The layout becomes a size container, so each note can use
+   the layout's width (100cqw) minus the card column and a 40px
+   gap. Never narrower than its own column, never wider than 760px.
+   ========================================================= */
+@media (min-width: 1001px) {
+  .booking-deposit-layout,
+  .booking-consent-layout {
+    container-type: inline-size;
+  }
+
+  .deposit-intro .deposit-note {
+    width: min(710px, max(100%, 100cqw - 610px - 90px));
+  }
+
+  .consent-intro .medical-note {
+    width: min(640px, max(100%, 100cqw - 710px - 90px));
+  }
+}

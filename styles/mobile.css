@@ -640,14 +640,12 @@
   .paynow-content > p { font-size: 0.92rem; line-height: 1.45; text-align: center; }
   .paynow-qr-wrap img { width: 170px; height: 170px; }
 
-  .paynow-qr-wrap span,
-  .account-button {
+  .paynow-qr-wrap span {
     padding: 6px 18px;
     border-width: 2px;
     font-size: 0.9rem;
   }
 
-  .account-actions { gap: 8px; margin-bottom: 14px; }
 
   /* GrabPay */
   .grabpay-intro-text { margin-bottom: 14px; font-size: 0.95rem; }
@@ -763,21 +761,6 @@
   .home-layout { gap: 34px; }        /* icons ↔ video (was 26px) */
 }
 
-/* Booking template copy icon (phones) */
-@media (max-width: 600px) {
-  .booking-template-card .booking-template-header h3 {
-    padding-right: 52px;
-    padding-left: 52px;
-  }
-
-  .template-copy-button { right: 8px; }
-
-  .template-copy-button svg {
-    width: 22px;
-    height: 22px;
-  }
-}
-
 /* Footer (phones) */
 @media (max-width: 600px) {
   .site-footer {
@@ -855,3 +838,103 @@
   .nz-notice p { font-size: 0.78rem; }
   .nz-notice-artists a { padding: 5px 8px; font-size: 0.72rem; }
 }
+
+/* Booking form (phones) */
+@media (max-width: 600px) {
+  .booking-form {
+    gap: 18px;
+    padding: 20px 18px 22px;
+  }
+
+  .booking-field label { font-size: 1rem; }
+  .booking-field-hint { font-size: 0.8rem; }
+
+  /* 16px stops iPhones zooming in when a field is tapped */
+  .booking-field input,
+  .booking-field textarea {
+    padding: 10px 12px;
+    border-radius: 10px;
+    font-size: 16px;
+  }
+
+  .booking-form-check { font-size: 0.9rem; }
+  .booking-form-note { font-size: 0.82rem; }
+}
+
+/* Tattoo type pills (phones) */
+@media (max-width: 600px) {
+  .booking-choice-group legend { font-size: 1rem; }
+  .booking-choices { gap: 8px; }
+  .booking-choice span { padding: 8px 13px; font-size: 0.88rem; }
+}
+
+/* FAQ page + five-link menu (phones/tablets) */
+@media (max-width: 1000px) {
+  .faq-page .booking-pricing-section { padding-top: 40px; }
+}
+
+@media (max-width: 600px) {
+  .home-nav {
+    gap: 12px clamp(12px, 3.8vw, 18px);
+  }
+
+  .home-nav a {
+    font-size: clamp(1rem, 4.6vw, 1.2rem);
+  }
+}
+
+/* Instagram grid (phones) — edge-to-edge feel like the app */
+@media (max-width: 600px) {
+  .instagram-grid { gap: 3px; }
+  .instagram-post { border-radius: 3px; }
+  .instagram-badge { top: 5px; right: 5px; width: 16px; height: 16px; }
+  .instagram-more { margin-top: 24px; }
+  .instagram-more a { padding: 8px 20px; font-size: 0.9rem; }
+}
+
+/* Same, roomier gap between the page header and the content */
+@media (max-width: 1000px) {
+  .about-grid { margin-top: 80px; }
+  .aftercare-container { margin-top: 80px; }
+  .booking-hero-layout.booking-hero-single { margin-top: 80px; }
+  .faq-page .booking-pricing-section { padding-top: 80px; }
+}
+
+@media (max-width: 600px) {
+  .about-grid { margin-top: 64px; }
+  .aftercare-container { margin-top: 64px; }
+  .booking-hero-layout.booking-hero-single { margin-top: 64px; }
+  .faq-page .booking-pricing-section { padding-top: 64px; }
+}
+
+/* Embedded Jotform + waiver card (phones) */
+@media (max-width: 600px) {
+  .jotform-embed { border-radius: 14px; }
+  .jotform-embed iframe { height: 1100px; }
+  .jotform-fallback { font-size: 0.82rem; }
+
+  .waiver-card {
+    margin-top: 36px;
+    padding: 20px;
+    border-width: 2px;
+    border-radius: 18px;
+  }
+
+  .waiver-card h3 { font-size: 1.2rem; }
+  .waiver-card p { font-size: 0.92rem; }
+  .waiver-card .booking-contact-button { width: 100%; }
+  .faq-waiver-button { margin-top: 20px; }
+}
+
+/* FAQ page (phones) */
+@media (max-width: 600px) {
+  .faq-intro { font-size: 0.9rem; }
+  .faq-group-label { margin: 40px 0 10px; font-size: 0.95rem; }
+  .faq-group:first-of-type .faq-group-label { margin-top: 28px; }
+  .faq-contact { margin-top: 56px; }
+  .faq-contact h2 { font-size: clamp(1.9rem, 8vw, 2.4rem); }
+  .faq-contact p { font-size: 0.92rem; margin-bottom: 20px; }
+  .faq-contact .booking-contact-button,
+  .faq-inline-button { width: 100%; }
+}
+
