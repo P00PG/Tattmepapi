@@ -3002,3 +3002,185 @@ html { scrollbar-gutter: stable; }
     width: min(640px, max(100%, 100cqw - 710px - 90px));
   }
 }
+
+/* FAQ — sections: intro level with its list */
+/* Intro text sits level with the middle of its list */
+@media (min-width: 1001px) {
+  .faq-page .booking-pricing-layout,
+  .faq-page .booking-deposit-layout,
+  .faq-page .booking-policy-layout,
+  .faq-page .booking-consent-layout,
+  .faq-page .booking-payment-layout {
+    align-items: center;
+  }
+
+  .faq-page .deposit-intro,
+  .faq-page .consent-intro {
+    display: block;
+    min-height: 0;
+    padding-top: 0;
+  }
+
+  .faq-page .booking-pricing-section,
+  .faq-page .booking-deposit-section,
+  .faq-page .booking-policy-section,
+  .faq-page .booking-consent-section,
+  .faq-page .booking-payment-section {
+    padding-top: 110px;
+    padding-bottom: 110px;
+  }
+}
+
+/* Email icon — outlined like the Instagram icon */
+.social-links a:last-child svg.email-icon,
+.email-icon {
+  fill: none;
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+/* Email link in the Aftercare text */
+.aftercare-content a {
+  color: inherit;
+  font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  overflow-wrap: anywhere;
+}
+
+/* =========================================================
+   FAQ — one short list of topics (like her reference)
+   ========================================================= */
+.faq-lead {
+  max-width: 720px;
+  margin: 0 0 48px;
+  font-size: clamp(1.05rem, 1.3vw, 1.4rem);
+  letter-spacing: -0.03em;
+  line-height: 1.45;
+}
+
+.faq-lead a {
+  color: inherit;
+  font-weight: 700;
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 3px;
+  overflow-wrap: anywhere;
+}
+
+.faq-container .aftercare-content .faq-subhead {
+  margin: 30px 0 10px;
+  font-size: 1.05em;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+}
+
+.faq-container .aftercare-content .faq-subhead:first-child {
+  margin-top: 0;
+}
+
+.faq-container .aftercare-content a {
+  color: inherit;
+  font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+/* =========================================================
+   FAQ answers — easier to read
+   ========================================================= */
+.faq-container .faq-content {
+  max-width: 780px;
+  margin: 0;
+  padding: 4px 24px 48px;
+  text-align: left;
+}
+
+.faq-container .faq-content p,
+.faq-container .faq-content li {
+  margin: 0 0 12px;
+  font-size: clamp(1.02rem, 1.15vw, 1.22rem);
+  letter-spacing: -0.02em;
+  line-height: 1.55;
+}
+
+/* Bold only — no underlines, less busy */
+.faq-container .faq-content strong {
+  font-weight: 700;
+  text-decoration: none;
+}
+
+/* Subheadings: bigger than the text, with a thin line above */
+.faq-container .faq-content .faq-subhead {
+  margin: 28px 0 12px;
+  padding-top: 22px;
+  border-top: 1px solid #d9d9d9;
+  font-size: clamp(1.15rem, 1.4vw, 1.45rem);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+}
+
+.faq-container .faq-content .faq-subhead:first-child {
+  margin-top: 0;
+  padding-top: 0;
+  border-top: 0;
+}
+
+/* Each rule on its own line, with a small dash */
+.faq-points {
+  margin: 0 0 8px;
+  padding: 0;
+  list-style: none;
+}
+
+.faq-points li {
+  position: relative;
+  padding-left: 24px;
+}
+
+.faq-points li::before {
+  position: absolute;
+  top: 0.78em;
+  left: 2px;
+  width: 11px;
+  height: 2px;
+  background: #111;
+  content: "";
+}
+
+/* Worked examples in a light grey box */
+.faq-container .faq-content .faq-example {
+  margin: 4px 0 20px;
+  padding: 12px 16px;
+  border-radius: 12px;
+  background: #f1f1f1;
+  color: #111;
+  font-size: clamp(0.98rem, 1.1vw, 1.15rem);
+}
+
+/* Small print: still readable */
+.faq-container .faq-content .faq-note {
+  margin-top: 18px;
+  color: #333;
+  font-size: clamp(0.95rem, 1.05vw, 1.1rem);
+  font-style: italic;
+}
+
+/* FAQ answers — a touch bigger */
+.faq-container .faq-content p,
+.faq-container .faq-content li {
+  font-size: clamp(1.1rem, 1.28vw, 1.35rem);
+}
+
+.faq-container .faq-content .faq-subhead {
+  font-size: clamp(1.25rem, 1.55vw, 1.6rem);
+}
+
+.faq-container .faq-content .faq-example {
+  font-size: clamp(1.05rem, 1.2vw, 1.25rem);
+}
+
+.faq-container .faq-content .faq-note {
+  font-size: clamp(1rem, 1.12vw, 1.18rem);
+}
